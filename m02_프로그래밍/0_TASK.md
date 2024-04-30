@@ -273,3 +273,210 @@ for i in word_list:
         word_cnt[i] = 1
 
 print(word_cnt)
+
+
+#Task1_0429. input_str을 아래와 같이 단어로 분리하여 출력하세요.
+#['Hello', 'world', 'How', 'are', 'you', 'today', 'I', 'am', 'fine', 'Thank', 'you', '']
+
+input_str = "Hello, world! How are you today? I am fine. Thank you!"
+word = input_str.replace('!','').replace(',', '').replace('?', '').replace('.', '').split()
+print(word)
+
+# teach.Task1_0429
+import re
+
+tokens = re.split('[ ,.?!]+', input_str)
+print(tokens)
+
+
+# Task2_0429. 십진수 122를 2진수, 8진수, 16진수로 변경하여 출력하세요.
+
+num = 122
+
+a = bin(num)
+b = oct(num)
+c = hex(num)
+
+print('2진수:',a)
+print('8진수:',b)
+print('16진수:',c)
+
+
+# teach.Task2_0429
+decimal_number = 122
+binary_number = bin(decimal_number)
+print('2진수:',binary_number)
+
+octal_number = oct(decimal_number)
+print('8진수:',octal_number)
+
+hexadecimal_number = hex(decimal_number)
+print('16진수:',hexadecimal_number)
+
+
+
+# Task3_0429. 두 수의 곱셈 결과를 계산하고, 그 결과에 10을 더하세요.
+
+num1 = int(input('num1:'))
+num2 = int(input('num2:'))
+
+print(f'{num1} * {num2} = {num1*num2} (+ 10)\nresult : {num1*num2+10}')
+
+
+
+# Task4_0429. 주어진 리스트에서 두 번째 요소를 삭제하고, 마지막에 새로운 요소 'Python'을 추가하세요.
+#리스트: ['Java', 'C', 'JavaScript']
+
+CL_list = ['Java', 'C', 'JavaScript']
+print('최초:',CL_list)
+
+del CL_list[1]
+print('2번째 요소 삭제:',CL_list)
+
+CL_list.append('Python')
+print('마지막 요소 추가:',CL_list)
+
+# teach.Task4_0429
+# 요소삭제 : print(CL_list.pop(1))
+
+
+
+# Task5_0429. 주어진 문자열에서 처음 세 글자와 마지막 세 글자를 연결하여 새로운 문자열을 만드세요.
+#문자열: 'Incredible'
+
+string = list('Incredible')
+word_list1 = string[0:3]
+word_list2 = string[-3:]
+combine = word_list1 + word_list2
+
+text = ''.join(combine)
+print(text)
+print(type(text))
+
+# teach.Task5_0429
+
+text = 'Incredible'
+new_text = text[:3] + text[-3:]
+print(new_text)
+
+
+
+# Task6_0429. 사용자의 이름과 이메일을 딕셔너리로 저장하고, 이름을 입력받아 해당하는 이메일을 출력하세요.
+#사용자 정보: 이름 - 'Alice', 이메일 - 'alice@example.com'
+
+user_info = {'Alice':'alice@example.com', 'Tom':'tom12@example.com'}
+
+Name = input('ID 입력 : ')
+
+if Name == 'Alice':
+    print(user_info['Alice'])
+elif Name == 'Tom':
+    print(user_info['Tom'])
+else :
+    print('사용자 정보 없음')
+
+# teach.Task6_0429
+d = {'Alice':'alice@example.com', 'Tom':'tom12@example.com'}
+name = input('이름 입력 : ')
+if name in d:
+    print(d[name])
+else:
+    print("존재하지 않음")
+
+
+
+# Task7_0429. 주어진 두 튜플에서 공통 요소만을 찾아 집합으로 만드세요.
+#튜플: (1, 2, 3, 4, 5)와 (4, 5, 6, 7, 8)
+
+tuple1 = (1, 2, 3, 4, 5)
+tuple2 = (4, 5, 6, 7, 8)
+
+set1 = set(tuple1)
+set2 = set(tuple2)
+
+check = set1 & set2
+
+print(check)
+
+
+# teach.Task7_0429
+common_elements = set(tuple1) & set(tuple2)
+print(common_elements)
+
+
+
+# Task8_Challenge_0429. 다음 요구 사항을 충족하는 프로그램을 작성하세요:
+#사용자로부터 이름, 나이, 좋아하는 색상을 입력받습니다.
+#입력받은 정보를 딕셔너리로 저장하고, 모든 사용자 정보를 리스트에 저장합니다.
+#이름이 'John'인 사용자의 정보만 출력하세요.
+#전체 사용자의 평균 나이를 계산하고 출력하세요.
+# =============================================================================
+# 1. 사용자 데이터:
+# - 이름: John
+# - 나이: 28
+# - 좋아하는 색상: Blue
+# 2. 사용자 데이터:
+# - 이름: Alice
+# - 나이: 24
+# - 좋아하는 색상: Red
+# 3. 사용자 데이터:
+# - 이름: Maria
+# - 나이: 32
+# - 좋아하는 색상: Green
+# =============================================================================
+
+userDict = {}
+userList = ['이름', '나이', '좋아하는색']
+msg = '1.사용자 추가\n2.정보 확인\n3.사용자 목록\n4.종료\n'
+
+while True :
+    choice = int(input(msg))
+
+    if choice == 1:
+        userName = input("사용자 이름 : ")
+        if userName in userDict:
+            print("!!사용자 이름 중복!!")
+        else: #userDict[userName] = input() : userDict에 key&value 추가
+            userDict[userName] = input("이름, 나이, 좋아하는색 입력\nex)Kim,35,Black\n").split(",")
+            
+    elif choice == 2:
+        userName = input("확인할 사용자 이름 : ")
+        if userName in userDict:
+            print(userDict[userName])
+        else :
+            print('해당 사용자는 없습니다.')
+            
+    elif choice == 3:
+        print(userDict)
+
+    elif choice == 4:
+        break
+    
+    else:
+        print("잘못 입력하셨습니다")
+
+total_age = sum(int(user_info[1]) for user_info in userDict.values()) 
+average_age = total_age / len(userDict)  
+print(f"사용자들의 평균 나이는 {average_age:.2f}살입니다.")
+
+# teach.Task8_0429
+users = []
+for _ in range(3):
+    name = input("이름 입력:")
+    age = int(input("나이 입력:"))
+    favorite_color = input("좋아하는 색:")
+
+    user_info = {'name':name, 'age':age, 'favorite_color':favorite_color}
+    users.append(user_info)
+    
+for user in users:
+    if user['name'] == 'Jonh':
+        print(f'Jonh\'s info:{user}')
+
+total_age = sum(user['age'] for user in users)
+average_age = total_age / len(users)
+print(f'Average age of users:{average_age:.2f}')
+
+
+
+
