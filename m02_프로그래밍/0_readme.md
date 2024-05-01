@@ -141,3 +141,19 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
 - 클래스 정의: 파이썬에서 클래스는 객체를 생성하는 데 사용되는 템플릿. dict_values는 딕셔너리의 값을 보여주는 뷰 객체를 생성하는 특별한 내장 클래스.
 - 뷰 객체: dict_values 객체는 딕셔너리의 값에 대한 동적인 뷰를 제공. "뷰(view)"란 원본 딕셔너리 객체의 값이 변하면 그 변화가 dict_values 객체에도 반영되는, 원본 데이터의 실시간 반영본을 의미. 이는 딕셔너리의 값들이 수정, 추가, 삭제될 때 dict_values 객체가 자동으로 업데이트된다는 의미.
 - 객체 인스턴스: dict_values 객체는 dict_values 클래스의 인스턴스. 이 클래스는 파이썬의 다른 모든 클래스처럼 특정 데이터 구조와 메서드를 가진다. 예를 들어, dict_values 객체는 순회 가능하며 (iterable), 딕셔너리의 모든 값을 순차적으로 접근할 수 있는 메서드를 제공.
+
+
+#### 파이썬의 random 모듈
+난수를 생성하기 위한 다양한 함수를 제공
+- 기본 난수 생성:
+  - random.random(): 0과 1 사이의 무작위 실수를 반환.
+- 범위 지정 난수 생성:
+  - random.randint(a, b): a와 b 사이의 무작위 정수를 반환(b 포함).
+  - random.randrange(start, stop[, step]): 지정된 범위에서 무작위 정수를 반환. step을 설정하여 수의 간격을 조정할 수 있다.
+- 시퀀스용 함수:
+  - random.choice(sequence): 주어진 시퀀스(리스트, 튜플 등)에서 무작위로 아이템을 선택하여 반환.
+  - random.shuffle(x[, random]): 리스트의 항목들을 무작위로 섞는다. random은 섞기를 위한 함수를 커스텀할 때 사용.
+  - random.sample(population, k): 주어진 시퀀스에서 무작위로 k개의 항목을 뽑아 새 리스트로 반환.
+- 분포 기반 난수 생성:
+  - random.uniform(a, b): a와 b 사이의 무작위 실수를 균등 분포로 반환.
+  - random.gauss(mu, sigma): 평균 mu와 표준편차 sigma를 가지는 정규 분포에서 난수를 반환.
