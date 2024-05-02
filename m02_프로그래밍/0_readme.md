@@ -157,3 +157,21 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
 - 분포 기반 난수 생성:
   - random.uniform(a, b): a와 b 사이의 무작위 실수를 균등 분포로 반환.
   - random.gauss(mu, sigma): 평균 mu와 표준편차 sigma를 가지는 정규 분포에서 난수를 반환.
+ 
+#### 표현식(Expression)
+- 하나 이상의 값, 변수, 연산자, 함수 호출 등을 조합하여 평가(evaluate)될 때 값을 생성하거나 반환하는 코드 
+- 표현식은 계산되어 값이 되는 모든 것을 의미
+
+표현식의 예시:
+- 수치 계산: 2 + 3는 5라는 값을 반환
+- 문자열 조합: "Hello " + "World"는 "Hello World"라는 문자열을 생성
+- 논리 연산: x > 5는 x의 값에 따라 True 또는 False를 반환
+- 함수 호출: sum([1, 2, 3])은 리스트의 합인 6을 반환
+- 조건식: x if x > 0 else -x는 x가 양수면 x를, 음수면 -x를 반환
+
+
+### pop 함수 
+ - 리스트와 같은 자료 구조에서 주로 사용되는 함수
+ - 이 함수는 특정 인덱스에 위치한 요소를 리스트에서 제거하고 해당 요소를 반환
+
+
