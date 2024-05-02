@@ -478,5 +478,216 @@ average_age = total_age / len(users)
 print(f'Average age of users:{average_age:.2f}')
 
 
+# Task1_0430. 남녀 파트너 정해주기 프로그램(zip)
+# 같은 수의 남녀 모임에서 파트너를 랜덤하게 정해주는 프로그램을 만들어 보세요.
+
+from random import shuffle
+
+male = ['철수','여포','로미오','이몽룡','온달']
+female = ['영희','백설','줄리엣','춘향','초선']
+
+shuffle(male); shuffle(female)
+couples = zip(male,female)
+print(list(zip(male, female)))
+
+# teach.Task1_0430
+for i, couple in enumerate(couples):
+    print(f'커플{i+1}: {couple[0]}, {couple[1]}')
+
+# Task2_0430. 대문자, 소문자, 숫자를 포함하는 8자리 랜덤 비밀번호를 생성하는 프로그램을 작성하세요.
+import random
+import string # 문자열 상수를 제공하는 모듈로, 여기서는 알파벳 문자,숫자 포함
+
+num1 = str(123456789)
+str1 = 'abcdefghijklmnopqrstuvwxyz'
+str2 = str1.upper()
+word = num1 + str1 + str2
+
+password = random.sample(word, 8)
+print('무작위 8자리 비밀번호:',''.join(password))
+
+# teach.Task2_0430
+import random
+str1 = string.ascii_letters
+print(str1)
+numbers = string.digits
+print(numbers)
+
+characters = str1 + numbers
+passwords = ''.join(random.choice(characters) for i in range(8))
+print("랜덤 비밀번호 : ", passwords)
+
+# if 대문자, 소문자, 숫자가 한번씩은 반드시 포함되야 하는 경우
+upper = random.choice(string.ascii_uppercase)
+lower = random.choice(string.ascii_lowercase)
+digit = random.choice(string.digits)
+
+characters = string.ascii_letters + string.digits
+rest = ''.join(random.choice(characters) for i in range(5))
+# 모든 요소를 하나의 문자열로 합치기
+password = upper + lower + digit + rest
+print(password)
+password = ''.join(random.sample(password, len (password))) # 선택할 시퀸스, 요소
+print('랜덤 비밀번호 : ',password)
 
 
+# Task3_0430. 발표자 수를 랜덤하게 출력하는 프로그램을 작성하세요.
+# (발표자 수 입력)
+import random
+
+kita = ['김성현','황강민','윤호준','류윤선','이상협','박지환','최환욱','서보선','김한결','김도현','김하준',
+        '김도원','신현진','소지승','이범석','이현석','이명신','박윤경','이도헌','김홍준']
+
+pick = int(input('발표자 수 입력 :'))
+
+presenters = random.sample(kita, pick)
+
+print(f'발표자 : {presenters}')
+
+# Task4_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 구구단을 
+# 출력하는 프로그램을 작성하세요.
+title = '구구단 프로그램'
+num1 = input('1~9 사이 숫자 입력:')
+result = 0
+print('\n' + num1 + ' ' + '단')
+num1 = int(num1)
+
+for i in range(1,10):
+    print(f'{num1}*{i} = {num1 * i}')
+    
+
+# if 한번에 출력
+for i in range(2, 10):
+    print(f"{' '*5}{i}단{' '*5}", end = '\t')
+print()     # f-string내에서 { } 안에는 변수 뿐만 아니라 Python 표현식도 올 수 있음.
+
+for i in range(2,10):
+    print('='*12, end = '\t')
+print()    
+
+for i1 in range(1,10):
+    for i2 in range(2,10):
+        print(f"{i2} * {i1} = {i1 * i2}\t", end = '') 
+    print()
+
+# Task5_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 팩토리얼을 계산하세요.
+num = int(input('숫자입력:'))
+result = 1
+
+for i in range(1, num+1):
+    result *= i
+    
+print(result)
+
+# Task6_0430. 0부터 20까지의 숫자 중에서 짝수와 홀수를 분리하여
+# 두 개의 리스트에 저장하세요.
+numbers1 = []
+numbers2 = []
+
+for i in range(21):
+    if i % 2 == 0 and i != 0:
+        numbers1.append(i)
+    elif i % 2 != 0 and i != 0:
+        numbers2.append(i)
+        
+print(numbers1, numbers2)
+
+# Task7_0430. 주어진 리스트에서 최대값을 찾아 출력하세요.
+numbers = [34, 78, 2, 45, 99 ,23]
+
+max_value = max(numbers)
+print(max_value)
+
+# teach.Task7_0430.
+max = 0
+for i in numbers:
+    if i > max :
+        max = i
+print(max)
+
+# Task8_0430.  1부터 10 사이의 임의의 숫자를 맞추는 게임을 만드세요.
+# 사용자가 숫자를 맞출 때까지 입력을 계속 받으며, 정답을 맞추면 게임을 종료하세요.
+import random
+print('Up & Down 게임')
+picknum = random.randint(1,10)
+
+while True:
+    choice = int(input('숫자를 맞추세요. \'1~10 사이 중 하나\''))
+    if picknum > choice and choice < 11:
+        print("Up!")
+        
+    elif picknum < choice and choice < 11:
+        print("Down!")
+    
+    elif picknum == choice:
+        print('정답!')
+        break
+    else:
+        print('잘못 입력함!')
+
+
+# Task9_0430. 태어난 연도를 입력받아 띠를 출력하는 프로그램을 작성하세요.
+ani_year = ['쥐','소','호랑이','토끼','용','뱀','말','양','원숭이','닭','개','돼지']
+
+while True:
+    year = int(input('출생년도 입력(종료키:0) : '))
+    index = (year - 1900) % 12
+    animal = ani_year[index]
+    
+    if year == 0:
+        break
+    else:
+        print(f'{year}년생은 {animal}띠입니다.')
+
+# teach.Task9_0430.
+# 0년 부터 시작할 경우(2024/12) = 8이므로 8번째 인덱스 값 원숭이로 list 순서 변경
+x = ['원숭이','닭','개','돼지','쥐','소','호랑이','토끼','용','뱀','말','양']
+y = int(input('출생년도 입력 : '))
+print(f'{x[y%12]} 띠')
+
+
+# Task10_0430. 아래 사항을 반영하여 커피 자판기 프로그램을 작성하세요.
+# 시나리오 : 자판기 커피 재고 5잔, 커피 1잔 가격 300원, 재고 범위내에서 300원 이상 돈을 넣으면
+#            거스름돈과 커피를 주고 그렇지 않으면 반환하며 재고가 소진되면 안내멘트 출력
+# - 각 Case별 멘트 출력은 상황에 맞게 창작
+# - while, if ~ elif ~ else 제어문을 사용하여 작성
+
+def coffee_machine(money):
+    price = 300 # 커피값
+    coffee = 5 # 커피재고
+    count = min(money // 300, coffee) # 커피잔수
+    change = money - (count * price) # 거스름돈
+
+    for i in range(count):
+        if coffee > 0:
+            change = money - (i+1) * price
+            coffee -= 1
+        else :
+            print('커피재고 없음')
+    print("커피 = %d잔, 잔돈 = %d원" %(i+1, change))
+
+print('*커피 자판기*')
+my_money = int(input('투입 금액 : '))
+coffee_machine(my_money)
+
+# teach.Task10_0430.
+coffee_cnt = 5
+
+while True:
+    money = int(input('금액 투입 : '))
+    if money == 300:
+        print('1잔 나옴')
+        coffee_cnt -= 1
+    elif money > 300:
+        want = int(input('잔수 입력 : '))
+        money_want = want * 300
+        if money < money_want:
+            print('금액 부족')
+        else:
+            print(f'{want}잔 나옴, 잔돈 {money - money_want}원 받아가세요.')
+        coffee_cnt -= want
+    else:
+        print('금액 부족, 투입금액 반환 (%d원)'%(money))
+    if coffee_cnt == 0:
+        print('커피 재고 없음')
+        break
