@@ -691,3 +691,260 @@ while True:
     if coffee_cnt == 0:
         print('커피 재고 없음')
         break
+
+
+# Task1_0502. 짝수와 짝수를 입력하면 곱한 값을 출력하고 홀수와 홀수를 입력하면 덧셈 값을 출력하고 그외는 다시 입력하라는 메시지를 출력하세요.
+
+num1 = int(input('정수 입력 : '))
+num2 = int(input('정수 입력 : '))
+
+mulNum = num1 * num2
+sumNum = num1 + num2
+
+if num1 % 2 == 0 and num2 % 2 == 0:
+    print(f'{num1}*{num2} = {mulNum}')
+elif num1 % 2 != 0 and num2 % 2 != 0:
+    print(f'{num1}+{num2} = {sumNum}')
+else:
+    print('다시 입력하시오')
+
+
+# Task2_0502. 현재 계절 구분 프로그램
+# - 시나리오 : 3 ~ 5월은 봄, 6 ~ 8월은 여름, 9 ~ 11월은 가을,
+#             12 ~ 2월은 겨울로 구분. 지금 계절을 알려주는 프로그램
+# - 각 계절별 출력 멘트는 계절에 맞게 창작
+# - if 조건문으로 datetime 모듈을 import해서 datetime.now 함수를 사용해서 작성
+
+# import datetime
+# import pytz
+
+# now = datetime.datetime.now()
+# now_month = now.month
+
+# seasons = [('봄',[3, 4, 5]), ('여름',[6, 7, 8]),('가을',[9,10,11]),('겨울',[12,1,2])]
+
+# for season, months in seasons:
+#     if now_month in months:
+#         print(f'현재 계절은 {season}입니다.')
+#         break
+# else:
+#     print('날짜 오류')
+
+#%% teach.Task2_0502.
+from datetime import datetime
+spring = [3, 4, 5]
+summer = [6, 7, 8]
+autumn = [9,10,11]
+winter = [12,1,2]
+
+today = datetime.now()
+month = today.month
+
+if month in spring:
+    print("봄")
+elif month in summer:
+    print('여름')
+elif month in summer:
+    print('가을')
+else:
+    print('겨울')
+
+# method.2
+t = datetime.datetime.now()
+print('현재 계절은?')
+if t.month<12 and t.month >= 9:
+    print('가을')
+elif t.month<6 and t.month >= 3:
+    print('봄')
+elif t.month<9 and t.month >= 6:
+    print('여름')
+else:
+    print('겨울')
+
+
+
+# Task3_0502. 1부터 99까지 아래와 같이 2개의 수를 곱해서 가장 큰 수를 구하세요.
+# `1*99, 2*98 ...99*1`
+
+result = 0
+
+for i1 in range(1,100):
+    i2 = 100 - i1
+    mul = i1 * i2
+    if mul > result:
+        result = mul
+
+print('최대값',result)
+
+#%% teach.Task3_0502.
+max_value = 0
+for i in range(1, 100):
+    if max_value > (i*(100-i)):
+        continue
+    else:
+        max_value = i*(100-i)
+print(max_value)
+
+# while문 사용
+while n <= 100:
+    a = n*(100-n)
+    if a > result:
+        result = a
+        n += 1
+    else:
+        n += 1
+        continue
+print(result)
+
+# 메소드 사용 예제
+def findBiggestOne():
+    result = 0
+    for i in range(1,100):
+        value = i * (100-i)
+        if value > result:
+            result = value
+    return(result)
+print(findBiggestOne())
+
+# teach.메소드. 입력값 업속 출력값만 있는 형태의 사용자 함수
+def findBiggestOne():
+    biggestNum = 0
+    for i,j in zip(range(1,100), range(99,0,-1)):
+        if i*j > biggestNum:
+            biggestNum = i*j
+    return biggestNum
+print(findBiggestOne())    
+
+
+# Task4_0502. [    ]을 채워서 아래의 출력과 같이 출력하세요.
+numbers = [1,2,3,4,5,6,7,8,9]
+output = [[], [], []] # [[1,4,7],[2,5,8],[3,6,9]]
+
+output = [[1,4,7],[2,5,8],[3,6,9]]
+output = [numbers[0::3], numbers[1::3],numbers[2::3]]
+
+#%% teach.Task4_0502.
+numbers = [1,2,3,4,5,6,7,8,9]
+output = [[],[],[]]
+
+for num in numbers:
+    if num % 3 == 1:
+        output[0].append(num)
+    elif num % 3 == 2:
+        output[1].append(num)
+    else :
+        output[2].append(num)
+print(output)
+
+# method.2
+for number in numbers:
+    output[(number-1)%3].append(number)
+print(output)
+
+
+
+# Task5_0502. 주어진 리스트에서 중복된 요소를 제거하고,
+# 남은 요소만을 포함하는 새 리스트를 반환합니다. 순서는 유지해야 합니다.
+
+input_list = [1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 7]
+
+set1 = set(input_list)
+set1 = list(set1)
+print(set1)
+
+# method.2
+items = []
+for i in input_list:
+    if i not in items:
+        items.append(i)
+print(items)
+
+#%% teach.Task5_0502.
+for i in input_list:
+    if input_list.count(i) > 1: #count함수 (중복요소 확인)
+        input_list.remove(i) # 1개 초과 중복요소 제거
+print(input_list)
+
+
+# method (응용예제)
+input_list = [1, 2, 6, 2, 3, 7, 4, 4, 5, 6, 7, 7]
+
+def remove_dup(input_list):
+  num = []
+  for item in input_list:
+    if item not in num:
+      num.append(item)
+  return num
+
+result=remove_dup(input_list)
+print(result)
+
+
+# Task6_0502. 주어진 문자열을 모스 코드로 변환하는 함수를 작성하세요.
+# 공백은 무시하고 알파벳만 변환하세요.
+morse_code = {
+        'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
+        'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
+        'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.',
+        'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-',
+        'Y': '-.--', 'Z': '--..'
+    }
+input_text = "Hello World"
+result = ''
+text_word = input_text.replace(' ','').upper()
+
+for i in text_word:
+    if i in morse_code:
+         result += morse_code[i] + '`'
+print(result)
+
+# teach.Task6_0502.
+
+for char in input_text:
+    if char.upper() in morse_code:
+        result += morse_code[char.upper()]
+                # morse_code[key]
+print(result)
+
+
+# Task7_0502. 주어진 비대칭 m×n 매트릭스(2차원 리스트)에서, 모든 대각선 상의
+# 합을 계산하는 함수를 작성하세요. 결과는 각 대각선의 합을 리스트로 반환해야 합니다.
+# 반환값 : [1, 6, 15, 24, 20, 12]
+
+input_matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
+]
+print(len(input_matrix))
+print(len(input_matrix[0]))
+
+def diagonal_sums(matrix):
+    if not matrix:
+        return []
+    m, n = len(matrix), len(matrix[0])
+    # 최대 가능한 대각선 수는 m + n - 1
+    print(m,n)
+    max_diagonals = m + n - 1
+    result = [0] * max_diagonals
+
+    # 모든 원소를 순회하면서 해당 대각선 인덱스에 값을 더함
+    for i in range(m):
+        for j in range(n):
+            # 대각선 인덱스는 행 인덱스와 열 인덱스의 차의 절댓값
+            diagonal_index = i + j
+            result[diagonal_index] += matrix[i][j] # 인덱스 위치(i,j)
+
+    return result
+
+# 매트릭스 입력
+input_matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [10, 11, 12]
+]
+
+# 대각선 합 결과 출력
+print(diagonal_sums(input_matrix))
