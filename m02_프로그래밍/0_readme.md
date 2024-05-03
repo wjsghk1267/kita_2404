@@ -35,6 +35,31 @@
 #### 식별자
 count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두 유효한 식별자. 각각의 식별자는 특정한 데이터 또는 기능에 이름을 부여하여 코드 내에서 해당 데이터나 기능을 참조할 수 있게하며 코드의 가독성과 유지 보수성을 높이는 데 중요한 역할
 
+#### 식별자 기본규칙
+ - 키워드를 사용하면 안된다.
+ * 특수문자는 언더 바(_)만 사용
+ * 숫자로 시작하면 안된다
+ - 공백을 포함할 수 없다
+   * a
+   - b
+   
+ ex) 식별자 선언 가능여부 Check \
+ alpha  // O\
+ break  // X 키워드\
+ alpha10 // O\
+ _alpha  // 0\
+ 273alpha // X 숫자시작\
+ AlpHa   // O\
+ has space // X 공백\
+
+ 파이썬은 snake_case와 CamelCase를 모두 사용
+ - itemlist : item_list itemList
+ - loginstatus : login_status loginStatus
+ - CamelCase(대문자로 시작) 클래스
+ - snake_case() 뒤에 () 있을시 = 함수
+ - snake_case - 변수 // 함수/변수 모두 소문자로 시작
+
+ - 
 #### 자료형
 - 자료형 또는 데이터 타입이란 숫자, 문자 등과 같이 여러 종류의 데이터를 구분하기 위한 분류
 - 파이썬의 자료형은 크게 숫자(numbers), 시퀀스(sequence), 매핑(mapping) 등으로 나눌 수 있다.
@@ -64,6 +89,19 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
 3. 유용성:
 - sort(): 리스트에서만 작동하기 때문에 리스트만 정렬할 수 있습니다.
 - sorted(): 다양한 객체를 정렬할 수 있으며 결과는 항상 리스트로 반환됩니다.
+
+## 자료형 - Tuple
+ - 튜플은 변경할 수 없는(immutable)순서가 있는 컬렉션
+ - 프로그램에서 그 값이 항상 변하지 않아야 되는 경우 사용
+
+## 자료형 - 사전 (dictionary)
+- 키와 값을 하나의 요소로 하는 순서가 없는 집합
+ - 인덱스값이 없음. key값으로 사용. (인덱스값) list=['a'(0), 1(1),...]
+
+## 자료형 - 집합, set
+ - 중복을 허용하지 않으며 순서가 없다.
+
+ - 
 
 
 #### 파이썬에서 들여쓰기
