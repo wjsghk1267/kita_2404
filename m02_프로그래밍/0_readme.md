@@ -101,7 +101,9 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
 ## 자료형 - 집합, set
  - 중복을 허용하지 않으며 순서가 없다.
 
- - 
+## 자료형 - 논리(Bool) True와 False
+    - 파이썬에서 참과 거짓을 나타내는 상수, True = 1, False = 0 값을 반환
+    - 조건을 판단해서 그 조건이 참이면 True, 거짓이면 False 반환.
 
 
 #### 파이썬에서 들여쓰기
@@ -112,8 +114,11 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
 
 # 사용자 함수의 형태
  - 입력값, 출력값 모두 있는 경우
+ - = def(입력값) / return (출력값)
  - 입력값만 있는 경우
+ - = def(입력값)
  - 출력값만 있는 경우
+ - = def() / return
  - 입출력값이 없는 경우
 
 # 이스케이프 문자
@@ -213,3 +218,30 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
  - 이 함수는 특정 인덱스에 위치한 요소를 리스트에서 제거하고 해당 요소를 반환
 
 
+
+
+
+# 파이썬에서 함수는 크게 내장 함수(Built-in Functions)와 외장 함수(External Functions)로 나뉩니다.
+
+1. 내장 함수 (Built-in Functions):
+- 내장 함수는 파이썬 인터프리터에 포함되어 있어, 별도의 모듈을 임포트(import)하지 않고도 사용 예를 들어, print(), len(), type(), range(), zip() 등이 내장 함수입니다.
+- 이러한 함수들은 기본적인 작업을 수행하며, 파이썬 프로그래밍의 기본적인 빌딩 블록(building blocks)으로 작동
+
+2. 외장 함수 (External Functions):
+- 표준 라이브러리에 포함된 모듈과 함수를 가리키는 것으로 모듈을 임포트하여 사용
+- 파이썬 표준 라이브러리의 os, sys, math, random, datetime 등의 모듈에는 다양한 외장 함수가 포함
+
+3. 외부 라이브러리나 패키지
+- 표준 라이브러리에 포함되지 않아 기본 설치에는 포함되지 않는다.
+- 이를 사용하려면 먼저 해당 라이브러리나 패키지를 설치
+- 외부 라이브러리는 통상적으로 파이썬의 패키지 관리자인 pip를 사용하여 설치
+- 설치 후에는 외장 함수와 마찬가지로 필요한 모듈을 임포트하여 사용
+- 예: numpy, pandas, requests 등의 외부 라이브러리에 포함된 함수들.
+
+3. 사용자 정의 함수(User-Defined Functions):
+- 사용자가 직접 정의하여 사용하는 함수
+- def 키워드를 사용하여 함수를 정의하며, 필요에 따라 매개변수와 반환 값을 지정
+
+4. 람다 함수(Lambda Functions):
+- 이름 없는 간단한 함수를 정의할 때 사용하는 익명 함수
+- lambda 키워드를 사용하여 한 줄로 함수를 정의하며, 주로 간단한 연산이 필요할 때 사용
