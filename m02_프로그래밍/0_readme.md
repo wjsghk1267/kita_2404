@@ -218,7 +218,18 @@ count, user_name, _is_valid, calculate_area, Car, model, year, math 및 m 모두
  - 이 함수는 특정 인덱스에 위치한 요소를 리스트에서 제거하고 해당 요소를 반환
 
 
+# 데이터 형태/요소 다양하게 생성&바꾸기 - 사용빈도 많음
+# list형[요소 int형]
+numbers = [i for i in range(99,0,-1)]
+print(type(numbers))
+print(type(numbers[0]))
+print(numbers,'\n')
 
+# list형 [요소 str형]
+numbers = [str(i) for i in range(1,100)]
+print(type(numbers))
+print(type(numbers[0]))
+print(numbers)
 
 
 # 파이썬에서 함수는 크게 내장 함수(Built-in Functions)와 외장 함수(External Functions)로 나뉩니다.
