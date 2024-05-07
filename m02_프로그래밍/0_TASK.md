@@ -948,3 +948,294 @@ input_matrix = [
 
 # 대각선 합 결과 출력
 print(diagonal_sums(input_matrix))
+
+
+# Task1_0503. 여러개의 음식을 동시에 주문할 수 있는 주문 시스템을 작성하세요.(구조 지향)
+# global 사용
+# logic : 메뉴선택 -> 수량선택 -> 세트여부 선택 -> 추가 주문여부결정
+
+
+def orderMenu():
+    menu = {1: 12000, 2: 8000, 3: 10000}
+    total = 0
+    while True:
+        order = int(input('비빔밥 메뉴를 선택해 주세요 (1, 2, 3) : ')) #메뉴선택
+        if order not in menu:
+            print("잘못 입력 하였습니다.")
+            continue
+        order_cnt = int(input('주문 수량을 입력해 주세요: ')) #수량선택
+        price = menu.get(order, 0) * order_cnt  # 가격계산
+        set_order = input('세트로 주문을 하시겠습니까? 3,000원 추가.(y/n) : ') #세트여부
+        if set_order == 'y':
+            price += 3000 * order_cnt  #세트주문 가격계산
+        total += price # 총금액 합산
+        add = input('계속 주문하시겠습니까? (y/n): ')
+        if add != 'y':
+            break
+    print(f"총 금액은 {total}원 입니다.")
+
+print((
+'''
+    KITA 식당에 오신 것을 환영합니다
+=====================================
+
+          - 메  뉴 -
+    1. 불고기 비빔밥 : 12,000원
+    2. 야채 비빔밥 : 8,000원
+    3. 전주 비빔밥 : 10,000원
+
+    세트 주문시 : 3000원 추가
+    (세트는 밥과 반찬이 추가됩니다.)
+
+=====================================
+'''
+))
+print(orderMenu())
+
+
+#teach.Task1_0503.
+
+menu_items = {'1':('불고기 비빔밥', 12000),
+              '2':('야채 비빔밥', 8000),
+              '3':('전주 비빔밥', 10000)}
+
+set_price = 3000
+orders = {}
+price_total = 0
+
+def display_menu():
+    print("\n♣♣♣ KITA 식당에 오신 것을 환영합니다 ♣♣♣")
+    print("========================================")
+    print("           - 메뉴 -")
+    for key, (name, price) in menu_items.items():
+        print(f"  {key}. {name} : {price}원")
+    print("\n  세트 주문시 : 3000원 추가 (세트는 밥과 반찬이 추가됩니다.)")
+    print("========================================")
+    
+def display_order_summary():
+    global price_total # 전역변수 price_total 사용 선언 (모든 함수 변수 공유)
+    print('\n◆장바구니')
+    price_total = 0
+    for key, (name, price) in menu_items.items(): #딕셔너리 key,value 가져오기
+        count = orders.get((key, False), 0) 
+        #get함수 = 딕셔너리 key있으면 값 가져오기. 없으면 0
+        count_set = orders.get((key, True), 0)
+        print(f' {name} {count}개 : {count * price}원')
+        print(f' {name} 세트 {count_set}개 : {count_set*(price + set_price)}')
+        price_total += (count * price) + (count_set * (price + set_price))
+    print(f' 총 금액 {price_total}원\n')
+    
+def add_order(menu_id, is_set):
+    item_name, item_price = menu_items[menu_id]
+    if is_set:
+        item_price += set_price
+    num = input(f"\n◆{item_name}{' 세트' if is_set else ''} 몇 개 주문하시겠습니까?\n")
+    if num.isdigit() and int(num) > 0:
+        orders[(menu_id, is_set)] = orders.get((menu_id, is_set), 0) + int(num)
+        #        ↳   key          : ↳      value    + int(num)!추가주문!
+        # 요약 : 딕셔너리 orders = {(menu_id, is_set):num(개수)} // is_set = true or false (세트 여부)
+        print(f"\n{item_name}{' 세트' if is_set else ''} {num}개가 장바구니에 담겼습니다.\n")
+    else:
+        print('◆양수만 입력하세요◆')
+        
+def process_order():
+    while True:
+        msg = input('◆ 주문 하시겠습니까? (y or n) >>').strip().lower()
+        if msg == 'y':
+            while True:
+                display_menu()
+                display_order_summary()
+                choice = input('◆주문할 메뉴를 선택해주세요. (1~3, \전체취소:0, 결제:5 >>').strip().lower()
+                if choice in menu_items:
+                    set_choice = input('\n◆3000원을 추가해 세트 주문하시겠습니까? \(y or n)\n').strip().lower()
+                    if set_choice in ['y', 'n']:
+                        add_order(choice, set_choice == 'y')
+                    else:
+                        print('◆잘못된 선택입니다. (y or n)')
+                elif choice == '0':
+                    orders.clear()
+                    print('\n모든 주문이 취소되었습니다.')
+                elif choice == '5':
+                    if price_total > 0:
+                        print(f'◆주문하려면 결제해주세요. 결제금액은 {price_total}원 입니다.\n')
+                        input('결제를 완료하려면 아무 키나 누르세요..')
+                        print(f'\n총 금액 {price_total}원이 결제되었습니다. 감사합니다')
+                        orders.clear()
+                        break
+                else:
+                    print('◆잘못 입력하였습니다')
+            else :
+                print('감사합니다')
+                break
+            
+if __name__ == "__main__":
+    process_order()
+
+
+
+# Task2_0503. 내장함수 5개를 활용해서 사용자 함수로 간단한 프로그램을 만드세요.
+
+# [예시] 문서관리 프로그램
+# len() - 문자열의 길이를 계산합니다.\
+# input() - 사용자로부터 입력을 받습니다.\
+# print() - 결과를 출력합니다.\
+# sum() - 주어진 조건에 따라 특정 개수를 계산합니다.\
+# Counter (from collections) - 문자의 빈도수를 계산합니다.\
+
+# 비밀번호 암호화/복호화 프로그램
+# input() , len() , ord() , chr() , type()
+
+be_pw = input('비밀번호 생성 (10자리 이상) : ')
+af_pw = ''
+re_pw = ''
+
+if len(be_pw) >= 10:
+    for i in be_pw:
+        af_pw += chr(ord(i)*5)
+    print(f'기존 비밀번호 : {be_pw}')
+    print(f'보안화 비밀번호 : {af_pw}')
+else :
+    print('오류! 10자리 미만')
+
+if len(af_pw) >= 10 :
+    for i2 in af_pw:
+        re_pw += chr(ord(i2)//5)
+    print(f'복호화 비밀번호 : {re_pw}')
+else :
+    print('오류! 10자리 미만')
+
+print(type(af_pw))
+print(type(re_pw))
+
+
+#teach.Task2_0503
+def string_statistics(user_input):
+    #문자열 길이 변환
+    length = len(user_input)
+
+    #가장 자주 등장하는 문자 찾기
+    from collections import Counter
+    frequency = Counter(user_input)
+    most_common = frequency.most_common(1)[0][0]
+
+    #숫자 개수 세기
+    num_count = sum(c.isdigit() for c in user_input)
+
+    #대문자 개수 세기
+    uppercase_count = sum(c.isupper() for  c in user_input)
+
+    #소문자 개수 세기
+    lowercase_count = sum(c.islower() for  c in user_input)    
+
+    #결과 출력
+    print(f'입력된 문자열의 길이: {length}')
+    print(f'가장 자주 등장하는 문자: {most_common}')
+    print(f'숫자의 개수: {num_count}')
+    print(f'대문자 개수: {uppercase_count}')
+    print(f'소문자 개수: {lowercase_count}')
+
+user_input = input('문자열 입력:')
+string_statistics(user_input)
+
+
+# Task3_0503. 외장함수 3개 이상 활용해서 간단한 프로그램을 만드세요
+from datetime import datetime
+import random
+import time
+
+now = datetime.now()
+loto_Num = [n for n in range(1, 46)]
+jackpot_Num = []
+
+for i in range(1, 7):
+    random.shuffle(loto_Num)
+    pick = loto_Num.pop()
+    print(f'나왔습니다, {i}번째 당첨번호는 {pick}입니다.')
+    jackpot_Num.append(pick)
+    time.sleep(1)
+
+jackpot_Num.sort()
+
+print(f'{now.year}년도 {now.month}월, {now.day}일자\n로또 당첨 번호는 {jackpot_Num} 입니다.')
+
+
+#teach.Task3_0503
+
+import os
+import datetime
+import shutil
+
+def daily_scheduler():
+    #현재 날씨와 시간을 가져온다
+    today = datetime.datetime.now()
+    date_string = today.strftime('%Y-%m-%d %H:%M:%S')
+    print(f'오늘의 날짜와 시간: {date_string}')
+    #작업 파일의 이름을 정한다.
+    filename = f"tasks_{today.strftime('%Y%m%d')}.txt"
+    #파일이 이미 존재하는지 확인
+    if os.path.exists(filename):
+        print(f"'{filename}' 파일이 이미 존재합니다. 백업을 생성합니다")
+        # 백업 파일 생성
+        shutil.copy(filename, filename + '.bak')
+    else :
+        print(f"'{filename}' 파일이 존재하지 않습니다. 새로운 파일을 생성합니다.")
+
+    #사용자로부터 오늘의 주요 작업을 입력받기
+    task = input('오늘의 주요 작업을 입력하세요: ')
+    #작업 내용을 파일에 저장합니다.
+    with open(filename,'a') as file:
+        file.write(f"{date_string}: {task}\n")
+    print(f"'{filename}' 파일에 작업이 저장되었습니다.")
+if __name__ == "__main__":
+    daily_scheduler()
+
+
+
+# Task4_0503. 리스트를 작성하고 람다 함수를 이용해서 한번에 함수를 적용하여 결과값을 출력하세요.
+# 내장함수 map(f,iterable)
+# 함수(f)와 반복가능한(iterable)자료형 입력으로 받는다.
+# map은 입력받은 자료형의 각 요소를 함수 f가 수행한 결과를 묶어서 돌려준다.
+
+numList = []
+
+for i in range(1,6):
+    numList.append((i))
+
+squared_numList = map(lambda f : f * f, numList)
+sum_numList = map(lambda f : f + f, numList)
+filtered_numList = filter(lambda f : f % 2 == 0, numList)
+
+print(list(squared_numList))
+print(list(sum_numList))
+print(list(filtered_numList))
+
+
+
+# Task5_0503. 외부 라리브러리를 임포트해서 간단한 프로그램을 만드세요.
+# ===========================예시==============================================
+# from bs4 import BeautifulSoup
+# html_doc = "<html><head><title>Hello World</title></head></html>"
+# soup = BeautifulSoup(html_doc, 'html.parser')
+# print(soup.title.text)
+# =============================================================================
+
+#teach.Task5_0503.
+import requests
+from bs4 import BeautifulSoup
+
+def fetch_website_content(url):
+    # URL에서 데이터를 가져온다
+    response = requests.get(url)
+    if response.status_code == 200:
+    # HTML 내용을 객체로 패싱한다.
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+
+    #예제 : 페이지 타이틀을 출력합니다.
+        print("Page Title:", soup.title.string if soup.title else "No title found")
+    else:
+        print("Failed to  retrieve the webpage")
+        print("Stauts code:", response.status_code)
+if __name__=="__main__":
+    url = input("저장하고 싶은 웹사이트의 URL을 입력하세요.:")
+    fetch_website_content(url)
