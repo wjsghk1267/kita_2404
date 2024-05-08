@@ -208,9 +208,9 @@ print('확인결과 :{}'.format(Check_Inter(substring, text)))
 
 
 # Task5_0426. 주어진 연도가 윤년인지 판별하는 함수를 작성하세요.
-# 윤년은 다음의 조건을 만족해야 합니다:
-# 4로 나누어 떨어진다.
-# 100으로 나누어 떨어지지 않거나, 400으로 나누어 떨어지면 윤년이다.
+- 윤년은 다음의 조건을 만족해야 합니다:
+- 4로 나누어 떨어진다.
+- 100으로 나누어 떨어지지 않거나, 400으로 나누어 떨어지면 윤년이다.
 
 def Check_Year(a,b):
     if a % b == 0:
@@ -225,7 +225,7 @@ year = 2020
 print(f'윤년 확인 : {Check_Year(year,4)}')
 
 # Task6_0426. Calculator 클래스를 작성하고 사칙연산을 수행하는
-# 객체 4개를 작성하여 결과를 출력하세요.
+- 객체 4개를 작성하여 결과를 출력하세요.
 
 class Calculator:
     def add(self,a,b,c,d):
@@ -249,15 +249,15 @@ print('곱하기:',obj1.mul(num1, num2, num3, num4))
 print('나누기:',obj1.div(num1, num2, num3, num4))
 
 # Task7_0426. 다음 과제를 수행하세요.
-# - 사용자로 부터 텍스트를 입력 받는다.
-# - 문자을 단어 단위로 분리 : split()
-# - 단어의 빈도수를 저장할 딕셔너리를 생성
-# - 각 단어의 빈도 수를 계산(for 문 / if else문) : word = word.lower() 소문자변환
-# - 결과 출력
-
-# [ 예시 ]
-# 문장을 입력하세요: I love apple. I love orange. Apple is tasty
-#{'i': 2, 'love': 2, 'apple.': 1, 'orange.': 1, 'apple': 1, 'is': 1, 'tasty': 1}
+- 사용자로 부터 텍스트를 입력 받는다.
+- 문자을 단어 단위로 분리 : split()
+- 단어의 빈도수를 저장할 딕셔너리를 생성
+- 각 단어의 빈도 수를 계산(for 문 / if else문) : word = word.lower() 소문자변환
+- 결과 출력
+- 
+- [ 예시 ]
+- 문장을 입력하세요: I love apple. I love orange. Apple is tasty
+- {'i': 2, 'love': 2, 'apple.': 1, 'orange.': 1, 'apple': 1, 'is': 1, 'tasty': 1}
 
 
 str1 = input('문장을 입력하세요:')
@@ -337,7 +337,7 @@ CL_list.append('Python')
 print('마지막 요소 추가:',CL_list)
 
 # teach.Task4_0429
-# 요소삭제 : print(CL_list.pop(1))
+- 요소삭제 : print(CL_list.pop(1))
 
 
 
@@ -386,7 +386,7 @@ else:
 
 
 # Task7_0429. 주어진 두 튜플에서 공통 요소만을 찾아 집합으로 만드세요.
-#튜플: (1, 2, 3, 4, 5)와 (4, 5, 6, 7, 8)
+- 튜플: (1, 2, 3, 4, 5)와 (4, 5, 6, 7, 8)
 
 tuple1 = (1, 2, 3, 4, 5)
 tuple2 = (4, 5, 6, 7, 8)
@@ -410,20 +410,19 @@ print(common_elements)
 #입력받은 정보를 딕셔너리로 저장하고, 모든 사용자 정보를 리스트에 저장합니다.
 #이름이 'John'인 사용자의 정보만 출력하세요.
 #전체 사용자의 평균 나이를 계산하고 출력하세요.
-# =============================================================================
-# 1. 사용자 데이터:
-# - 이름: John
-# - 나이: 28
-# - 좋아하는 색상: Blue
-# 2. 사용자 데이터:
-# - 이름: Alice
-# - 나이: 24
-# - 좋아하는 색상: Red
-# 3. 사용자 데이터:
-# - 이름: Maria
-# - 나이: 32
-# - 좋아하는 색상: Green
-# =============================================================================
+
+1. 사용자 데이터:
+- 이름: John
+- 나이: 28
+- 좋아하는 색상: Blue
+2. 사용자 데이터:
+- 이름: Alice
+- 나이: 24
+- 좋아하는 색상: Red
+3. 사용자 데이터:
+- 이름: Maria
+- 나이: 32
+- 좋아하는 색상: Green
 
 userDict = {}
 userList = ['이름', '나이', '좋아하는색']
@@ -479,7 +478,7 @@ print(f'Average age of users:{average_age:.2f}')
 
 
 # Task1_0430. 남녀 파트너 정해주기 프로그램(zip)
-# 같은 수의 남녀 모임에서 파트너를 랜덤하게 정해주는 프로그램을 만들어 보세요.
+- 같은 수의 남녀 모임에서 파트너를 랜덤하게 정해주는 프로그램을 만들어 보세요.
 
 from random import shuffle
 
@@ -532,7 +531,7 @@ print('랜덤 비밀번호 : ',password)
 
 
 # Task3_0430. 발표자 수를 랜덤하게 출력하는 프로그램을 작성하세요.
-# (발표자 수 입력)
+- (발표자 수 입력)
 import random
 
 kita = ['김성현','황강민','윤호준','류윤선','이상협','박지환','최환욱','서보선','김한결','김도현','김하준',
@@ -545,7 +544,7 @@ presenters = random.sample(kita, pick)
 print(f'발표자 : {presenters}')
 
 # Task4_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 구구단을 
-# 출력하는 프로그램을 작성하세요.
+- 출력하는 프로그램을 작성하세요.
 title = '구구단 프로그램'
 num1 = input('1~9 사이 숫자 입력:')
 result = 0
@@ -580,7 +579,7 @@ for i in range(1, num+1):
 print(result)
 
 # Task6_0430. 0부터 20까지의 숫자 중에서 짝수와 홀수를 분리하여
-# 두 개의 리스트에 저장하세요.
+- 두 개의 리스트에 저장하세요.
 numbers1 = []
 numbers2 = []
 
@@ -606,7 +605,7 @@ for i in numbers:
 print(max)
 
 # Task8_0430.  1부터 10 사이의 임의의 숫자를 맞추는 게임을 만드세요.
-# 사용자가 숫자를 맞출 때까지 입력을 계속 받으며, 정답을 맞추면 게임을 종료하세요.
+- 사용자가 숫자를 맞출 때까지 입력을 계속 받으며, 정답을 맞추면 게임을 종료하세요.
 import random
 print('Up & Down 게임')
 picknum = random.randint(1,10)
@@ -640,17 +639,17 @@ while True:
         print(f'{year}년생은 {animal}띠입니다.')
 
 # teach.Task9_0430.
-# 0년 부터 시작할 경우(2024/12) = 8이므로 8번째 인덱스 값 원숭이로 list 순서 변경
+- 0년 부터 시작할 경우(2024/12) = 8이므로 8번째 인덱스 값 원숭이로 list 순서 변경
 x = ['원숭이','닭','개','돼지','쥐','소','호랑이','토끼','용','뱀','말','양']
 y = int(input('출생년도 입력 : '))
 print(f'{x[y%12]} 띠')
 
 
 # Task10_0430. 아래 사항을 반영하여 커피 자판기 프로그램을 작성하세요.
-# 시나리오 : 자판기 커피 재고 5잔, 커피 1잔 가격 300원, 재고 범위내에서 300원 이상 돈을 넣으면
-#            거스름돈과 커피를 주고 그렇지 않으면 반환하며 재고가 소진되면 안내멘트 출력
-# - 각 Case별 멘트 출력은 상황에 맞게 창작
-# - while, if ~ elif ~ else 제어문을 사용하여 작성
+- 시나리오 : 자판기 커피 재고 5잔, 커피 1잔 가격 300원, 재고 범위내에서 300원 이상 돈을 넣으면
+-            거스름돈과 커피를 주고 그렇지 않으면 반환하며 재고가 소진되면 안내멘트 출력
+- - 각 Case별 멘트 출력은 상황에 맞게 창작
+- - while, if ~ elif ~ else 제어문을 사용하여 작성
 
 def coffee_machine(money):
     price = 300 # 커피값
@@ -710,25 +709,26 @@ else:
 
 
 # Task2_0502. 현재 계절 구분 프로그램
-# - 시나리오 : 3 ~ 5월은 봄, 6 ~ 8월은 여름, 9 ~ 11월은 가을,
-#             12 ~ 2월은 겨울로 구분. 지금 계절을 알려주는 프로그램
-# - 각 계절별 출력 멘트는 계절에 맞게 창작
-# - if 조건문으로 datetime 모듈을 import해서 datetime.now 함수를 사용해서 작성
+- 시나리오 : 3 ~ 5월은 봄, 6 ~ 8월은 여름, 9 ~ 11월은 가을,
+-             12 ~ 2월은 겨울로 구분. 지금 계절을 알려주는 프로그램
+- 각 계절별 출력 멘트는 계절에 맞게 창작
+- if 조건문으로 datetime 모듈을 import해서 datetime.now 함수를 사용해서 작성
 
-# import datetime
-# import pytz
 
-# now = datetime.datetime.now()
-# now_month = now.month
+import datetime
+import pytz
 
-# seasons = [('봄',[3, 4, 5]), ('여름',[6, 7, 8]),('가을',[9,10,11]),('겨울',[12,1,2])]
+now = datetime.datetime.now()
+now_month = now.month
 
-# for season, months in seasons:
-#     if now_month in months:
-#         print(f'현재 계절은 {season}입니다.')
-#         break
-# else:
-#     print('날짜 오류')
+seasons = [('봄',[3, 4, 5]), ('여름',[6, 7, 8]),('가을',[9,10,11]),('겨울',[12,1,2])]
+
+for season, months in seasons:
+    if now_month in months:
+        print(f'현재 계절은 {season}입니다.')
+        break
+else:
+    print('날짜 오류')
 
 #%% teach.Task2_0502.
 from datetime import datetime
@@ -764,7 +764,7 @@ else:
 
 
 # Task3_0502. 1부터 99까지 아래와 같이 2개의 수를 곱해서 가장 큰 수를 구하세요.
-# `1*99, 2*98 ...99*1`
+- `1*99, 2*98 ...99*1`
 
 result = 0
 
@@ -909,7 +909,7 @@ print(result)
 
 # Task7_0502. 주어진 비대칭 m×n 매트릭스(2차원 리스트)에서, 모든 대각선 상의
 # 합을 계산하는 함수를 작성하세요. 결과는 각 대각선의 합을 리스트로 반환해야 합니다.
-# 반환값 : [1, 6, 15, 24, 20, 12]
+- 반환값 : [1, 6, 15, 24, 20, 12]
 
 input_matrix = [
     [1, 2, 3],
@@ -951,8 +951,8 @@ print(diagonal_sums(input_matrix))
 
 
 # Task1_0503. 여러개의 음식을 동시에 주문할 수 있는 주문 시스템을 작성하세요.(구조 지향)
-# global 사용
-# logic : 메뉴선택 -> 수량선택 -> 세트여부 선택 -> 추가 주문여부결정
+- global 사용
+- logic : 메뉴선택 -> 수량선택 -> 세트여부 선택 -> 추가 주문여부결정
 
 
 def orderMenu():
@@ -1075,15 +1075,15 @@ if __name__ == "__main__":
 
 # Task2_0503. 내장함수 5개를 활용해서 사용자 함수로 간단한 프로그램을 만드세요.
 
-# [예시] 문서관리 프로그램
-# len() - 문자열의 길이를 계산합니다.\
-# input() - 사용자로부터 입력을 받습니다.\
-# print() - 결과를 출력합니다.\
-# sum() - 주어진 조건에 따라 특정 개수를 계산합니다.\
-# Counter (from collections) - 문자의 빈도수를 계산합니다.\
+- [예시] 문서관리 프로그램
+- len() - 문자열의 길이를 계산합니다.\
+- input() - 사용자로부터 입력을 받습니다.\
+- print() - 결과를 출력합니다.\
+- sum() - 주어진 조건에 따라 특정 개수를 계산합니다.\
+- Counter (from collections) - 문자의 빈도수를 계산합니다.\
 
-# 비밀번호 암호화/복호화 프로그램
-# input() , len() , ord() , chr() , type()
+- 비밀번호 암호화/복호화 프로그램
+- input() , len() , ord() , chr() , type()
 
 be_pw = input('비밀번호 생성 (10자리 이상) : ')
 af_pw = ''
@@ -1192,9 +1192,9 @@ if __name__ == "__main__":
 
 
 # Task4_0503. 리스트를 작성하고 람다 함수를 이용해서 한번에 함수를 적용하여 결과값을 출력하세요.
-# 내장함수 map(f,iterable)
-# 함수(f)와 반복가능한(iterable)자료형 입력으로 받는다.
-# map은 입력받은 자료형의 각 요소를 함수 f가 수행한 결과를 묶어서 돌려준다.
+- 내장함수 map(f,iterable)
+- 함수(f)와 반복가능한(iterable)자료형 입력으로 받는다.
+- map은 입력받은 자료형의 각 요소를 함수 f가 수행한 결과를 묶어서 돌려준다.
 
 numList = []
 
@@ -1212,12 +1212,12 @@ print(list(filtered_numList))
 
 
 # Task5_0503. 외부 라리브러리를 임포트해서 간단한 프로그램을 만드세요.
-# ===========================예시==============================================
-# from bs4 import BeautifulSoup
-# html_doc = "<html><head><title>Hello World</title></head></html>"
-# soup = BeautifulSoup(html_doc, 'html.parser')
-# print(soup.title.text)
-# =============================================================================
+ ===========================예시==============================================
+ from bs4 import BeautifulSoup
+ html_doc = "<html><head><title>Hello World</title></head></html>"
+ soup = BeautifulSoup(html_doc, 'html.parser')
+ print(soup.title.text)
+ =============================================================================
 
 #teach.Task5_0503.
 import requests
@@ -1255,32 +1255,32 @@ print(list(strings))
 
 
 # Task2_0507. eval 함수를 활용하여 a,b 변수와 연산자를 입력하면 사칙연산을 수행하는 코드를 작성하세요.
-# (eval 사용하는 경우와 안하는 경우)
-# eval 사용
-# num1 = input('a,b,연산자(사칙연산) 입력 (ex. 1 + 2 >> ')
-# result = eval(num1)
-# print(f'{num1} = {result}')
+- (eval 사용하는 경우와 안하는 경우)
+- eval 사용
+- num1 = input('a,b,연산자(사칙연산) 입력 (ex. 1 + 2 >> ')
+- result = eval(num1)
+- print(f'{num1} = {result}')
 
-# # eval 미사용
-# num1 = int(input('num1 입력 : '))
-# num2 = int(input('num2 입력 : '))
-# num3 = input('연산자 입력 : ')
-# result = 0
+ # eval 미사용
+ num1 = int(input('num1 입력 : '))
+ num2 = int(input('num2 입력 : '))
+ num3 = input('연산자 입력 : ')
+ result = 0
 
-# if num3 == '+':
-#     result = num1 + num2
-#     print(result)
-# elif num3 == '/':
-#     result = num1 // num2
-#     print(result)
-# elif num3 == '*':
-#     result = num1 * num2
-#     print(result)
-# elif num3 == '-':
-#     result = num1 - num2
-#     print(result)
-# else :
-#     print('잘못입력함')
+ if num3 == '+':
+     result = num1 + num2
+     print(result)
+ elif num3 == '/':
+     result = num1 // num2
+     print(result)
+ elif num3 == '*':
+     result = num1 * num2
+     print(result)
+ elif num3 == '-':
+     result = num1 - num2
+     print(result)
+ else :
+     print('잘못입력함')
 
 # teach.Task2_0507
 
@@ -1296,12 +1296,13 @@ for i in num_list:
 
 
 # Task3_0507. list1에 대해서 아래와 같이 출력하는 코드를 작성하세요.
-# 인사평가 1번째 해당자는 김부장입니다. 회의실A로 오시기 바랍니다.\
-# 인사평가 2번째 해당자는 이차장입니다. 회의실A로 오시기 바랍니다.\
-# 인사평가 3번째 해당자는 김과장입니다. 회의실A로 오시기 바랍니다.\
-# 인사평가 4번째 해당자는 이대리입니다. 회의실A로 오시기 바랍니다.\
-# 인사평가 5번째 해당자는 오사원입니다. 회의실A로 오시기 바랍니다.\
-# 인사평가 6번째 해당자는 김인턴입니다. 회의실A로 오시기 바랍니다.
+ 인사평가 1번째 해당자는 김부장입니다. 회의실A로 오시기 바랍니다.\
+ 인사평가 2번째 해당자는 이차장입니다. 회의실A로 오시기 바랍니다.\
+ 인사평가 3번째 해당자는 김과장입니다. 회의실A로 오시기 바랍니다.\
+ 인사평가 4번째 해당자는 이대리입니다. 회의실A로 오시기 바랍니다.\
+ 인사평가 5번째 해당자는 오사원입니다. 회의실A로 오시기 바랍니다.\
+ 인사평가 6번째 해당자는 김인턴입니다. 회의실A로 오시기 바랍니다.
+
 list1 = ['김부장', '이차장', '김과장', '이대리', '오사원', '김인턴']
 
 for idx, person in enumerate(list1):
@@ -1322,18 +1323,18 @@ print(big)
 #1 
 print([i.upper() for i in words])
 
-# 인덱스 이용
+- 인덱스 이용
 for i in range(len(words)):
     words[i] = words[i].upper()
 print(words)
 
-# 요소를 이용
+- 요소를 이용
 re = []
 for i in words:
     re.append(i.upper())
 print(re)
 
-# 메소드 이용 - str.upper는 문자열의 모든 문자를 대문자로 변환
+- 메소드 이용 - str.upper는 문자열의 모든 문자를 대문자로 변환
 upper_words = list(map(str.upper, words))
 print(upper_words)
 
@@ -1356,8 +1357,8 @@ print(p_words)
 list1 = [0,1,7,3,4,5,6]
 
 list1.remove(7) # 값
-# list1.pop(2) # 인덱스
-# del list1[2]
+- list1.pop(2) # 인덱스
+- del list1[2]
 print(list1)
 
 
@@ -1394,11 +1395,11 @@ print(result)
 
 
 # Task3_0508. 다음을 수행하세요.
-# - 사용자로부터 문자열을 입력받습니다.
-# - 입력받은 문자열이 숫자로만 이루어져 있는지 확인합니다.
-# - 만약 숫자로만 이루어져 있다면, 그 숫자를 정수로 변환하여 100을 더한 결과를 출력합니다.
-# - 숫자가 아닌 문자가 포함되어 있다면, 사용자에게 숫자만 입력하라는 메시지를 출력합니다.
-# - 연산이 수행이 완료될 때까지 반복하고 수행이 완료되면 break 합니다. 
+- 사용자로부터 문자열을 입력받습니다.
+- 입력받은 문자열이 숫자로만 이루어져 있는지 확인합니다.
+- 만약 숫자로만 이루어져 있다면, 그 숫자를 정수로 변환하여 100을 더한 결과를 출력합니다.
+- 숫자가 아닌 문자가 포함되어 있다면, 사용자에게 숫자만 입력하라는 메시지를 출력합니다.
+- 연산이 수행이 완료될 때까지 반복하고 수행이 완료되면 break 합니다. 
 
 while True:
     user_input = input('숫자 입력 (q:종료) : ')
@@ -1416,10 +1417,10 @@ while True:
 
 
 # Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
-# 사용자로부터 문자열을 입력받습니다.
-# 입력받은 문자열이 알파벳과 숫자로만 이루어져 있는지 확인합니다.
-# 만약 조건을 만족한다면 "유효한 아이디입니다"라고 출력합니다.
-# 그렇지 않다면, "아이디는 알파벳과 숫자만 포함할 수 있습니다"라고 메시지를 출력합니다.
+- 사용자로부터 문자열을 입력받습니다.
+- 입력받은 문자열이 알파벳과 숫자로만 이루어져 있는지 확인합니다.
+- 만약 조건을 만족한다면 "유효한 아이디입니다"라고 출력합니다.
+- 그렇지 않다면, "아이디는 알파벳과 숫자만 포함할 수 있습니다"라고 메시지를 출력합니다.
 
 user_id = input('신규 ID 입력 : ')
 check_id = user_id.isalnum()
@@ -1431,9 +1432,9 @@ else :
 
 
 # Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
-# list = []
-# for i in range(0,20,2):
-#     list.append(i*i)
-# print(list)
+ list = []
+ for i in range(0,20,2):
+     list.append(i*i)
+ print(list)
 
 print([i*i for i in range(0,20,2)])
