@@ -1239,3 +1239,136 @@ def fetch_website_content(url):
 if __name__=="__main__":
     url = input("저장하고 싶은 웹사이트의 URL을 입력하세요.:")
     fetch_website_content(url)
+
+
+
+# Task1_0507. 튜플 형태인 strings를 다양한 문자가 포함된 순서로 정렬하세요.
+strings = ('a', 'ca', 'bar', 'aaaa', 'ababa')
+
+sorted_strings = sorted(strings, key = lambda x : len(set(x)), reverse = True)
+print(sorted_strings)
+
+strings = list(strings)
+strings.sort(key=lambda x : len(set(x)),reverse = True)
+print(list(strings))
+
+
+
+# Task2_0507. eval 함수를 활용하여 a,b 변수와 연산자를 입력하면 사칙연산을 수행하는 코드를 작성하세요.
+# (eval 사용하는 경우와 안하는 경우)
+# eval 사용
+# num1 = input('a,b,연산자(사칙연산) 입력 (ex. 1 + 2 >> ')
+# result = eval(num1)
+# print(f'{num1} = {result}')
+
+# # eval 미사용
+# num1 = int(input('num1 입력 : '))
+# num2 = int(input('num2 입력 : '))
+# num3 = input('연산자 입력 : ')
+# result = 0
+
+# if num3 == '+':
+#     result = num1 + num2
+#     print(result)
+# elif num3 == '/':
+#     result = num1 // num2
+#     print(result)
+# elif num3 == '*':
+#     result = num1 * num2
+#     print(result)
+# elif num3 == '-':
+#     result = num1 - num2
+#     print(result)
+# else :
+#     print('잘못입력함')
+
+# teach.Task2_0507
+
+num = input('5+5 :')
+math = ['+', '-', '/', '*']
+math = {'+': lambda a,b : a+b, '-': lambda a,b : a-b, '/': lambda a,b : a/b, '*': lambda a,b : a*b}
+
+num_list = list(num)
+for i in num_list:
+    if i in math:
+        num = num.split(i)
+        print(math[i](int(num[0]), int(num[1])))
+
+
+# Task3_0507. list1에 대해서 아래와 같이 출력하는 코드를 작성하세요.
+# 인사평가 1번째 해당자는 김부장입니다. 회의실A로 오시기 바랍니다.\
+# 인사평가 2번째 해당자는 이차장입니다. 회의실A로 오시기 바랍니다.\
+# 인사평가 3번째 해당자는 김과장입니다. 회의실A로 오시기 바랍니다.\
+# 인사평가 4번째 해당자는 이대리입니다. 회의실A로 오시기 바랍니다.\
+# 인사평가 5번째 해당자는 오사원입니다. 회의실A로 오시기 바랍니다.\
+# 인사평가 6번째 해당자는 김인턴입니다. 회의실A로 오시기 바랍니다.
+list1 = ['김부장', '이차장', '김과장', '이대리', '오사원', '김인턴']
+
+for idx, person in enumerate(list1):
+    print(f'인사평가 {idx+1}번째 해당자는 {list1}입니다. 회의실A로 오시기 바랍니다.')
+
+
+
+# Task4_0507. 주어진 문자열 리스트의 요소들을 대문자로 변환하세요.
+words = ["hello", "world", "python", "map"]
+big = []
+
+for char in words:
+    text = char.upper()
+    big.append(text)
+print(big)
+
+#teach.Task4_0507
+#1 
+print([i.upper() for i in words])
+
+# 인덱스 이용
+for i in range(len(words)):
+    words[i] = words[i].upper()
+print(words)
+
+# 요소를 이용
+re = []
+for i in words:
+    re.append(i.upper())
+print(re)
+
+# 메소드 이용 - str.upper는 문자열의 모든 문자를 대문자로 변환
+upper_words = list(map(str.upper, words))
+print(upper_words)
+
+
+
+
+# Task5_0507. 주어진 리스트에서 'p'로 시작하는 단어만 필터링하세요.
+words = ["python", "is", "powerful", "programming", "language", "pandas"]
+result = [i for i in words if i[0] == 'p']
+print(result)
+
+#teach.Task5_0507
+print([w for w in words if w.startswith('p')]) # 함수사용 startswith(), 조건식
+
+#2 
+p_words = list(filter(lambda x: x.startswith('p'), words)) # 필터함수 사용
+print(p_words)
+
+
+
+# Task6_0507. 내장함수를 이용해서 list = [0,1,7,3,4,5,6]에서 7를 삭제 후 출력하세요.
+list1 = [0,1,7,3,4,5,6]
+
+list1.remove(7) # 값
+# list1.pop(2) # 인덱스
+# del list1[2]
+
+print(list1)
+
+
+
+# Task8_0507. url에서 호스트 도메인(news.naver.com)을 추출하여 출력하세요.
+url = 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=105&oid=028&aid=0002334601'
+
+print(url.split('/')[2])
+
+
+print(list1)
