@@ -1339,7 +1339,6 @@ print(upper_words)
 
 
 
-
 # Task5_0507. 주어진 리스트에서 'p'로 시작하는 단어만 필터링하세요.
 words = ["python", "is", "powerful", "programming", "language", "pandas"]
 result = [i for i in words if i[0] == 'p']
@@ -1353,22 +1352,88 @@ p_words = list(filter(lambda x: x.startswith('p'), words)) # 필터함수 사용
 print(p_words)
 
 
-
 # Task6_0507. 내장함수를 이용해서 list = [0,1,7,3,4,5,6]에서 7를 삭제 후 출력하세요.
 list1 = [0,1,7,3,4,5,6]
 
 list1.remove(7) # 값
 # list1.pop(2) # 인덱스
 # del list1[2]
-
 print(list1)
 
 
 
 # Task8_0507. url에서 호스트 도메인(news.naver.com)을 추출하여 출력하세요.
 url = 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=105&oid=028&aid=0002334601'
-
 print(url.split('/')[2])
-
-
 print(list1)
+
+
+
+# Task1_0508. title() 함수를 사용하지 않고 동일한 결과를 출력하세요.
+
+name = input('이름입력:')
+name_list = name.strip().split(" ")
+list1 = []
+
+for i in name_list:
+    # re = i[0].upper()
+    list1.append(i[0].upper() + i[1:])
+ 
+result = ' '.join(list1)
+print(result)
+
+
+
+# Task2_0507. join 함수를 이용해서 ['a','b','c']을 아래와 같이 출력하세요.
+# a::b::c
+
+list1 = ['a','b','c']
+
+result = '::'.join(list1)
+print(result)
+
+
+# Task3_0508. 다음을 수행하세요.
+# - 사용자로부터 문자열을 입력받습니다.
+# - 입력받은 문자열이 숫자로만 이루어져 있는지 확인합니다.
+# - 만약 숫자로만 이루어져 있다면, 그 숫자를 정수로 변환하여 100을 더한 결과를 출력합니다.
+# - 숫자가 아닌 문자가 포함되어 있다면, 사용자에게 숫자만 입력하라는 메시지를 출력합니다.
+# - 연산이 수행이 완료될 때까지 반복하고 수행이 완료되면 break 합니다. 
+
+while True:
+    user_input = input('숫자 입력 (q:종료) : ')
+    check = user_input.isdigit()
+    # print(check)
+    if user_input == 'q':
+        print('프로그램 종료')
+        break
+    
+    if check == True:
+        result = int(user_input) + 100
+        print(f'입력숫자: {user_input} + 100 = {result}입니다.')
+    else :
+        print('잘못 입력하셨습니다')
+
+
+# Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
+# 사용자로부터 문자열을 입력받습니다.
+# 입력받은 문자열이 알파벳과 숫자로만 이루어져 있는지 확인합니다.
+# 만약 조건을 만족한다면 "유효한 아이디입니다"라고 출력합니다.
+# 그렇지 않다면, "아이디는 알파벳과 숫자만 포함할 수 있습니다"라고 메시지를 출력합니다.
+
+user_id = input('신규 ID 입력 : ')
+check_id = user_id.isalnum()
+if check_id == True:
+    print('생성 ID : {user_id}, 유효한 아이디입니다.')
+else :
+    print('아이디는 알파벳과 숫자만 포함할 수 있습니다')
+
+
+
+# Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
+# list = []
+# for i in range(0,20,2):
+#     list.append(i*i)
+# print(list)
+
+print([i*i for i in range(0,20,2)])
