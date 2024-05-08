@@ -1438,3 +1438,67 @@ else :
  print(list)
 
 print([i*i for i in range(0,20,2)])
+
+
+
+# Task6_0508. 유닉스 타임스탬프를 받아서 해당 시간을 datetime.datetime 객체로 변환하고, 그 결과를 출력하는 사용자 함수를 작성하여 임의의 타임스탬프를 입력하여 결과를 출력하세요.
+
+from datetime import datetime
+
+def changetimestamp(a):
+    t = int(a)
+    d = datetime.fromtimestamp(t)
+    print(d)
+
+k = input('입력:')
+print(changetimestamp(k))
+
+
+
+# Task7_0508. datetime 객체를 문자열로 변환하는 사용자 함수를 작성하여 datetime
+# 객체를 "YYYY-MM-DD HH:MM:SS" 형식의 문자열로 변환하고 출력하세요.
+from datetime import datetime
+
+def datetimetostr():
+    s = datetime.now()
+    s1 = s.strftime('%Y-%m-%d %H:%M:%S')
+    print(s1)    
+
+print(datetimetostr())
+
+
+
+# Task8_0508. 올해 경과된 날짜수 계산하세요.
+import datetime
+
+date1 = datetime.date(2023,12,31)
+date2 = datetime.date.today()
+diff = date2-date1
+print(diff.days)
+
+- method#2
+from datetime import datetime
+date = datetime.now()
+print(date.strftime('%j'))
+
+
+
+# Task9_0508. 현재 요일을 "2021-6-26 오늘은 토요일입니다."와 같은 형식으로 출력하세요.
+from datetime import datetime
+
+s = datetime.now()
+print(s.strftime('%Y-%m-%d 오늘은 {%A}입니다.'))
+
+
+
+# Task10_0508. 1에서 백만까지 더하는데 걸리는 프로그램 실행 시간을 
+# 밀리초(ms) 단위로 구하세요.(1ms=0.001초)
+import time
+result = 0
+
+start = time.time()
+for i in range(1, 10000001):
+    result += i
+end = time.time()
+
+print(f'{(end - start)*1000}ms')
