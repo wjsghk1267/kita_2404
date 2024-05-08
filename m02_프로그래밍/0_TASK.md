@@ -1212,12 +1212,10 @@ print(list(filtered_numList))
 
 
 # Task5_0503. 외부 라리브러리를 임포트해서 간단한 프로그램을 만드세요.
- ===========================예시==============================================
- from bs4 import BeautifulSoup
- html_doc = "<html><head><title>Hello World</title></head></html>"
- soup = BeautifulSoup(html_doc, 'html.parser')
- print(soup.title.text)
- =============================================================================
+- from bs4 import BeautifulSoup
+- html_doc = "<html><head><title>Hello World</title></head></html>"
+- soup = BeautifulSoup(html_doc, 'html.parser')
+- print(soup.title.text)
 
 #teach.Task5_0503.
 import requests
