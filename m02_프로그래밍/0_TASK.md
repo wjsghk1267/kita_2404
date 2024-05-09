@@ -1500,3 +1500,226 @@ for i in range(1, 10000001):
 end = time.time()
 
 print(f'{(end - start)*1000}ms')
+
+# teach_Task1_0507
+
+a = input("이름을 영어로 입력하세요.")
+
+b=a.strip().split(" ")
+e =""
+
+for i in range(len(b)):
+    c = list(b[i])
+
+    c[0] = c[0].upper()
+    d = "".join(c)
+    c = []
+    e = e + d + " "
+print(f"당신의 이름을 바꾸면 {e}입니다.")
+
+
+# Task2_0507. join 함수를 이용해서 ['a','b','c']을 아래와 같이 출력하세요.
+- a::b::c
+
+list1 = ['a','b','c']
+
+result = '::'.join(list1)
+print(result)
+
+
+
+# Task3_0508. 다음을 수행하세요.
+- 사용자로부터 문자열을 입력받습니다.
+- 입력받은 문자열이 숫자로만 이루어져 있는지 확인합니다.
+- 만약 숫자로만 이루어져 있다면, 그 숫자를 정수로 변환하여 100을 더한 결과를 출력합니다.
+- 숫자가 아닌 문자가 포함되어 있다면, 사용자에게 숫자만 입력하라는 메시지를 출력합니다.
+- 연산이 수행이 완료될 때까지 반복하고 수행이 완료되면 break 합니다.
+
+while True:
+    user_input = input('숫자 입력 : ')
+    check = user_input.isdigit()
+    if check == True:
+        result = int(user_input) + 100
+        print(f'입력숫자: {user_input} + 100 = {result}입니다.')
+        break
+    else :
+        print('잘못 입력하셨습니다')
+
+
+# teach_Task3_0508.
+while 1:
+  num = input('숫자를 입력하세요.')
+  if num.isdigit():
+      print(int(num)+100)
+      break
+  else:
+      print('숫자만 입력하세요.')
+
+
+
+# Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
+- 사용자로부터 문자열을 입력받습니다.
+- 입력받은 문자열이 알파벳과 숫자로만 이루어져 있는지 확인합니다.
+- 만약 조건을 만족한다면 "유효한 아이디입니다"라고 출력합니다.
+- 그렇지 않다면, "아이디는 알파벳과 숫자만 포함할 수 있습니다"라고 메시지를 출력합니다.
+while 1:
+    user_id = input('신규 ID 입력 : ')
+    check_id = user_id.isalnum()
+    if check_id == True:
+        print(f'유효한 아이디입니다.')
+        break
+    else :
+        print('아이디는 알파벳과 숫자만 포함할 수 있습니다')
+
+
+
+# Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
+- list = []
+- for i in range(0,20,2):
+-     list.append(i*i)
+- print(list)
+
+print([i*i for i in range(0,20,2)])
+
+# teach_Task5_0508
+print(list(map(lambda x: x*x, range(0,20,2))))
+
+
+
+# Task6_0508. 유닉스 타임스탬프를 받아서 해당 시간을 datetime.datetime 객체로 변환하고, 그 결과를 출력하는 사용자 함수를 작성하여 임의의 타임스탬프를 입력하여 결과를 출력하세요.
+
+from datetime import datetime
+def changetimestamp():
+    k = input('입력:')
+    t = float(k)
+    return datetime.fromtimestamp(t)
+print(changetimestamp())
+
+# teach.Task6_0508
+def timestamp_to_datetime(timestamp):
+    return datetime.fromtimestamp(timestamp)
+ts = float(input('timestamp 입력 : '))
+dt = timestamp_to_datetime(ts)
+print(dt)
+
+
+# Task7_0508. datetime 객체를 문자열로 변환하는 사용자 함수를 작성하여 datetime
+- 객체를 "YYYY-MM-DD HH:MM:SS" 형식의 문자열로 변환하고 출력하세요.
+from datetime import datetime
+
+def datetimetostr():
+    s = datetime.now()
+    s1 = s.strftime('%Y-%m-%d %H:%M:%S')
+    return s1    
+print(datetimetostr())
+
+
+# teach_Task7_0508.
+import datetime
+def datetime_to_string(dt):
+    return dt.strftime('%Y-%m-%d %H:%M:%S')
+
+dt = input('datetime을 입력하세요> ')
+dt = datetime.datetime.strptime(date_string, '%Y-%m-%d %H:%M:%S')
+s = datetime_to_string(dt)
+print(s)
+
+
+# Task8_0508. 올해 경과된 날짜수 계산하세요.
+import datetime
+
+date1 = datetime.date(2024,1,1)
+date2 = datetime.date.today()
+diff = date2-date1
+print(diff.days)
+
+#2
+from datetime import datetime
+date = datetime.now()
+print(date.strftime('%j'))
+
+
+# teach.Task8_0508.
+- current_date = datetime.date.today()
+- start_of_year = datetime.date(current_date.year, 1,1)
+- days_passed = (current_date - start_of_year).days
+- print(f'올해 경과된 날짜 수 : {days_passed}일')
+
+#2
+import time
+numday = time.localtime(time.time())
+print(numday)
+numday.tm_yday
+
+
+
+# Task9_0508. 현재 요일을 "2021-6-26 오늘은 토요일입니다."와 같은 형식으로 출력하세요.
+from datetime import datetime
+
+s = datetime.now()
+print(s.strftime('%Y-%m-%d 오늘은 %A입니다.'))
+
+
+# method_2
+import time
+from datetime import datetime
+
+wdays = {'Mon':'월요일', 'Tue':'화요일', 'Wed':'수요일', 'Thu':'목요일', 'Fri':'금요일', 'Sat':'토요일', 'Sun': '일요일'}
+
+now  = datetime.now()
+date = now.date()
+wday = now.strftime("%a")
+
+
+# teach.Task9_0508
+import time
+
+weekdays = ['월요일','화요일','수요일','목요일','금요일','토요일','일요일']
+t = time.localtime()
+today = f'{t.tm_year}-{t.tm_mon}-{t.tm_mday}'
+week = weekdays[t.tm_wday]
+# print('%s 오늘은 %s입니다' %(today, week))
+print(f'{today} 오늘은 {week}입니다.')
+
+print(f'{date} 오늘은 {wdays[wday]}입니다.')
+
+
+# Task10_0508. 1에서 백만까지 더하는데 걸리는 프로그램 실행 시간을
+- 밀리초(ms) 단위로 구하세요.(1ms=0.001초)
+import time
+result = 0
+
+start = time.time()
+for i in range(1, 10000001):
+    result += i
+end = time.time()
+
+print(f'{(end - start)*1000} ms')
+
+
+# method_2
+import time
+
+start = time.time()
+sn = sum(range(1, 1000001))
+end = time.time()
+print(f"1에서 백만까지 더하는데 걸린 시간 : {(end - start):.3f}초")
+
+minute, second = divmod((end-start), 60)
+h, m = divmod(minute, 60)
+print(f'{int(h)}시간 {int(minute)}분 {second:.3f}초')
+
+
+# teach.Task10_0508.
+import time
+
+t1 = time.time()
+t2 = 0
+result = 0
+
+for i in range(1000000):
+    result += i+1
+else:
+    t2 = time.time()
+
+print(f'백만까지 더한 값: {result}\n걸린 시간: {round((t2-t1)*1000)} (ms)')
