@@ -1,4 +1,4 @@
-# Task1_0425. 주어진 숫자 리스트에서 최소값과 최대값을 찾아 출력하세요.
+### Task1_0425. 주어진 숫자 리스트에서 최소값과 최대값을 찾아 출력하세요.
 numbers = [58, 45, 69, 19, 4, 87, 29, 13, 39, 15]
 
 numbers.sort()
@@ -7,7 +7,7 @@ print('최소값:',numbers[0])
 numbers.sort(reverse = True)
 print('최대값:',numbers[0])
 
-# teach # Task1_0425
+### teach # Task1_0425
 min_value = min(numbers)
 max_value = max(numbers)
 print(min_value,max_value)
@@ -29,7 +29,7 @@ for i in numbers:
 print('\n')
 print(f'최소값:{min_value1}\n최대값:{max_value1}')
 
-# Task2_0425. 주어진 숫자 리스트의 모든 요소의 합계와 평균을 계산하고 출력하세요
+### Task2_0425. 주어진 숫자 리스트의 모든 요소의 합계와 평균을 계산하고 출력하세요
 numbers = [58, 45, 69, 19, 4, 87, 29, 13, 39, 15]
 muti_numbers = sum(numbers)
 cnt = len(numbers)
@@ -39,7 +39,7 @@ print('총합 :',muti_numbers)
 print('평균 :',avg_numbers)
 
 
-# Task3_0425. 주어진 리스트에서 특정 요소가 등장하는 모든 인덱스를 리스트로 만들어 출력하세요.
+### Task3_0425. 주어진 리스트에서 특정 요소가 등장하는 모든 인덱스를 리스트로 만들어 출력하세요.
 items = ['apple', 'banana', 'cherry', 'apple', 'cherry', 'apple']
 search_items = []
 
@@ -49,23 +49,23 @@ for i in items:
 
 print(search_items)
 
-# teach_Task3_0425
+### teach_Task3_0425
 target = 'apple'
 indexes = [index for index, value in enumerate(items) if value == target]
 print(f"{target}의 모든 인덱스: {indexes}")
 
-# enumerate() 내장함수 : for(반복문) 사용시 인덱스변수 대신 사용하는 *함수*
+#### enumerate() 내장함수 : for(반복문) 사용시 인덱스변수 대신 사용하는 *함수*
 letters = ['A', 'B', 'C']
-# for문 변수사용
+#### for문 변수사용
 for i in range(len(letters)):
     letter = letters[i]
     print(i, letter)
-# for문 enumerate
+#### for문 enumerate
 for entry in enumerate(letters, start=1):
     print(entry)
 
 
-# Task4_0425. 주어진 리스트에서 연속해서 반복되는 요소만 제거하고, 결과 리스트를 반환하세요. 단, 처음 등장하는 요소는 유지해야 합니다.
+### Task4_0425. 주어진 리스트에서 연속해서 반복되는 요소만 제거하고, 결과 리스트를 반환하세요. 단, 처음 등장하는 요소는 유지해야 합니다.
 #예를 들어, ['a', 'a', 'b', 'c', 'c', 'c', 'd', 'e', 'e']가 입력되면, ['a', 'b', 'c', 'd', 'e']를 출력해야 합니다.
 
 items = ['a', 'a', 'b', 'c', 'c', 'c', 'd', 'e', 'e']
@@ -78,7 +78,7 @@ for i in items:
 print('최초 :',items)
 print('결과 :',result)
 
-# teach_Task4_0425
+### teach_Task4_0425
 li = ['a', 'a', 'b', 'c', 'c', 'c', 'd', 'e', 'e']
 result2 = [li[0]]
 for i in li[1:]:
@@ -86,7 +86,7 @@ for i in li[1:]:
         result2.append(i)
 print(result)
 
-# teach_Tsk04(2)
+### teach_Tsk04(2)
 def remove_consecutive_duplicates(items):
     #결과 리스트 초기화
     result = [items[0]]
@@ -102,9 +102,9 @@ print(remove_consecutive_duplicates(items))
 
 
 
-# Task5_0425 주어진 정수 리스트와 회전 횟수 k에 대해 리스트를 오른쪽으로 k만큼 회전시킨 결과를 반환하세요.
-# k가 리스트의 길이보다 클 수 있으며, 이 경우 k를 리스트 길이로 나눈 나머지만큼 실제 회전시키면 됩니다.
-# 예를 들어, [1, 2, 3, 4, 5]와 k=2가 주어지면, 결과는 [4, 5, 1, 2, 3]이 되어야 합니다.
+### Task5_0425 주어진 정수 리스트와 회전 횟수 k에 대해 리스트를 오른쪽으로 k만큼 회전시킨 결과를 반환하세요.
+### k가 리스트의 길이보다 클 수 있으며, 이 경우 k를 리스트 길이로 나눈 나머지만큼 실제 회전시키면 됩니다.
+### 예를 들어, [1, 2, 3, 4, 5]와 k=2가 주어지면, 결과는 [4, 5, 1, 2, 3]이 되어야 합니다.
 
 print('종료키 : a')
 def Right_movelist(move_list, k):
@@ -133,7 +133,7 @@ print(numbers,'\n')
 k = int(input('좌측 회전값(k) 입력 : '))
 print(Left_movelist(numbers,k))
 
-# teach_Task5_0425
+### teach_Task5_0425
 def rotate_list(nums, k):
     if not nums:
         return nums
@@ -161,14 +161,14 @@ print(rotate_right_list(nums, k))
 
 
 
-# Task1_0426. 주어진 리스트에서 중복된 요소를 제외하고 고유한 요소의 개수를 세는 프로그램을 작성하세요.
+### Task1_0426. 주어진 리스트에서 중복된 요소를 제외하고 고유한 요소의 개수를 세는 프로그램을 작성하세요.
 data = [1, 2, 2, 3, 4, 4, 4, 5]
 
 check = set(data)
 print(f'해당 List상 고유한 요소 개수는 : {len(check)}개 입니다.')
 
 
-# Task2_0426. 두 개의 리스트에서 공통으로 나타나는 요소들을 찾아 리스트로 반환하는 프로그램을 작성하세요.
+### Task2_0426. 두 개의 리스트에서 공통으로 나타나는 요소들을 찾아 리스트로 반환하는 프로그램을 작성하세요.
 #예시 입력: list1 = [1, 2, 3, 4, 5], list2 = [4, 5, 6, 7, 8]
 #예시 출력: [4, 5]
 
@@ -181,7 +181,7 @@ set2 = set(list2)
 print(f'두 개의 리스트 중 교집합 요소는 {list(set1&set2)} 입니다.')
 
 
-# Task3_0426. 주어진 숫자 리스트에서 특정 값보다 큰 요소가 하나라도 존재하는지 검사하고, 그 결과를 불 값으로 반환하는 함수를 작성하세요.
+### Task3_0426. 주어진 숫자 리스트에서 특정 값보다 큰 요소가 하나라도 존재하는지 검사하고, 그 결과를 불 값으로 반환하는 함수를 작성하세요.
 def Check_MaxNum(a,b):
     max_value = max(a)
     if max_value > b:
@@ -195,7 +195,7 @@ threshold = 15
 print(f'검사결과 : {Check_MaxNum(numbers, threshold)}')
 
 
-# Task4_0426. 주어진 문자열이 특정 문자열을 포함하는지 확인하고 결과를 불 값으로 반환하는 함수를 작성하세요.
+### Task4_0426. 주어진 문자열이 특정 문자열을 포함하는지 확인하고 결과를 불 값으로 반환하는 함수를 작성하세요.
 def Check_Inter(a,b):
     if a in b:
         return True
@@ -207,7 +207,7 @@ substring = "world"
 print('확인결과 :{}'.format(Check_Inter(substring, text)))
 
 
-# Task5_0426. 주어진 연도가 윤년인지 판별하는 함수를 작성하세요.
+### Task5_0426. 주어진 연도가 윤년인지 판별하는 함수를 작성하세요.
 - 윤년은 다음의 조건을 만족해야 합니다:
 - 4로 나누어 떨어진다.
 - 100으로 나누어 떨어지지 않거나, 400으로 나누어 떨어지면 윤년이다.
@@ -224,7 +224,7 @@ def Check_Year(a,b):
 year = 2020
 print(f'윤년 확인 : {Check_Year(year,4)}')
 
-# Task6_0426. Calculator 클래스를 작성하고 사칙연산을 수행하는
+### Task6_0426. Calculator 클래스를 작성하고 사칙연산을 수행하는
 - 객체 4개를 작성하여 결과를 출력하세요.
 
 class Calculator:
@@ -248,7 +248,7 @@ print('빼기:',obj1.sub(num1, num2, num3, num4))
 print('곱하기:',obj1.mul(num1, num2, num3, num4))
 print('나누기:',obj1.div(num1, num2, num3, num4))
 
-# Task7_0426. 다음 과제를 수행하세요.
+### Task7_0426. 다음 과제를 수행하세요.
 - 사용자로 부터 텍스트를 입력 받는다.
 - 문자을 단어 단위로 분리 : split()
 - 단어의 빈도수를 저장할 딕셔너리를 생성
@@ -275,21 +275,21 @@ for i in word_list:
 print(word_cnt)
 
 
-#Task1_0429. input_str을 아래와 같이 단어로 분리하여 출력하세요.
+### Task1_0429. input_str을 아래와 같이 단어로 분리하여 출력하세요.
 #['Hello', 'world', 'How', 'are', 'you', 'today', 'I', 'am', 'fine', 'Thank', 'you', '']
 
 input_str = "Hello, world! How are you today? I am fine. Thank you!"
 word = input_str.replace('!','').replace(',', '').replace('?', '').replace('.', '').split()
 print(word)
 
-# teach.Task1_0429
+### teach.Task1_0429
 import re
 
 tokens = re.split('[ ,.?!]+', input_str)
 print(tokens)
 
 
-# Task2_0429. 십진수 122를 2진수, 8진수, 16진수로 변경하여 출력하세요.
+### Task2_0429. 십진수 122를 2진수, 8진수, 16진수로 변경하여 출력하세요.
 
 num = 122
 
@@ -302,7 +302,7 @@ print('8진수:',b)
 print('16진수:',c)
 
 
-# teach.Task2_0429
+### teach.Task2_0429
 decimal_number = 122
 binary_number = bin(decimal_number)
 print('2진수:',binary_number)
@@ -315,7 +315,7 @@ print('16진수:',hexadecimal_number)
 
 
 
-# Task3_0429. 두 수의 곱셈 결과를 계산하고, 그 결과에 10을 더하세요.
+### Task3_0429. 두 수의 곱셈 결과를 계산하고, 그 결과에 10을 더하세요.
 
 num1 = int(input('num1:'))
 num2 = int(input('num2:'))
@@ -324,7 +324,7 @@ print(f'{num1} * {num2} = {num1*num2} (+ 10)\nresult : {num1*num2+10}')
 
 
 
-# Task4_0429. 주어진 리스트에서 두 번째 요소를 삭제하고, 마지막에 새로운 요소 'Python'을 추가하세요.
+### Task4_0429. 주어진 리스트에서 두 번째 요소를 삭제하고, 마지막에 새로운 요소 'Python'을 추가하세요.
 #리스트: ['Java', 'C', 'JavaScript']
 
 CL_list = ['Java', 'C', 'JavaScript']
@@ -336,12 +336,12 @@ print('2번째 요소 삭제:',CL_list)
 CL_list.append('Python')
 print('마지막 요소 추가:',CL_list)
 
-# teach.Task4_0429
+### teach.Task4_0429
 - 요소삭제 : print(CL_list.pop(1))
 
 
 
-# Task5_0429. 주어진 문자열에서 처음 세 글자와 마지막 세 글자를 연결하여 새로운 문자열을 만드세요.
+### Task5_0429. 주어진 문자열에서 처음 세 글자와 마지막 세 글자를 연결하여 새로운 문자열을 만드세요.
 #문자열: 'Incredible'
 
 string = list('Incredible')
@@ -353,7 +353,7 @@ text = ''.join(combine)
 print(text)
 print(type(text))
 
-# teach.Task5_0429
+### teach.Task5_0429
 
 text = 'Incredible'
 new_text = text[:3] + text[-3:]
@@ -361,7 +361,7 @@ print(new_text)
 
 
 
-# Task6_0429. 사용자의 이름과 이메일을 딕셔너리로 저장하고, 이름을 입력받아 해당하는 이메일을 출력하세요.
+### Task6_0429. 사용자의 이름과 이메일을 딕셔너리로 저장하고, 이름을 입력받아 해당하는 이메일을 출력하세요.
 #사용자 정보: 이름 - 'Alice', 이메일 - 'alice@example.com'
 
 user_info = {'Alice':'alice@example.com', 'Tom':'tom12@example.com'}
@@ -375,7 +375,7 @@ elif Name == 'Tom':
 else :
     print('사용자 정보 없음')
 
-# teach.Task6_0429
+### teach.Task6_0429
 d = {'Alice':'alice@example.com', 'Tom':'tom12@example.com'}
 name = input('이름 입력 : ')
 if name in d:
@@ -385,7 +385,7 @@ else:
 
 
 
-# Task7_0429. 주어진 두 튜플에서 공통 요소만을 찾아 집합으로 만드세요.
+### Task7_0429. 주어진 두 튜플에서 공통 요소만을 찾아 집합으로 만드세요.
 - 튜플: (1, 2, 3, 4, 5)와 (4, 5, 6, 7, 8)
 
 tuple1 = (1, 2, 3, 4, 5)
@@ -399,13 +399,13 @@ check = set1 & set2
 print(check)
 
 
-# teach.Task7_0429
+### teach.Task7_0429
 common_elements = set(tuple1) & set(tuple2)
 print(common_elements)
 
 
 
-# Task8_Challenge_0429. 다음 요구 사항을 충족하는 프로그램을 작성하세요:
+### Task8_Challenge_0429. 다음 요구 사항을 충족하는 프로그램을 작성하세요:
 #사용자로부터 이름, 나이, 좋아하는 색상을 입력받습니다.
 #입력받은 정보를 딕셔너리로 저장하고, 모든 사용자 정보를 리스트에 저장합니다.
 #이름이 'John'인 사용자의 정보만 출력하세요.
@@ -458,7 +458,7 @@ total_age = sum(int(user_info[1]) for user_info in userDict.values())
 average_age = total_age / len(userDict)  
 print(f"사용자들의 평균 나이는 {average_age:.2f}살입니다.")
 
-# teach.Task8_0429
+### teach.Task8_0429
 users = []
 for _ in range(3):
     name = input("이름 입력:")
@@ -477,7 +477,7 @@ average_age = total_age / len(users)
 print(f'Average age of users:{average_age:.2f}')
 
 
-# Task1_0430. 남녀 파트너 정해주기 프로그램(zip)
+### Task1_0430. 남녀 파트너 정해주기 프로그램(zip)
 - 같은 수의 남녀 모임에서 파트너를 랜덤하게 정해주는 프로그램을 만들어 보세요.
 
 from random import shuffle
@@ -489,11 +489,11 @@ shuffle(male); shuffle(female)
 couples = zip(male,female)
 print(list(zip(male, female)))
 
-# teach.Task1_0430
+### teach.Task1_0430
 for i, couple in enumerate(couples):
     print(f'커플{i+1}: {couple[0]}, {couple[1]}')
 
-# Task2_0430. 대문자, 소문자, 숫자를 포함하는 8자리 랜덤 비밀번호를 생성하는 프로그램을 작성하세요.
+### Task2_0430. 대문자, 소문자, 숫자를 포함하는 8자리 랜덤 비밀번호를 생성하는 프로그램을 작성하세요.
 import random
 import string # 문자열 상수를 제공하는 모듈로, 여기서는 알파벳 문자,숫자 포함
 
@@ -505,7 +505,7 @@ word = num1 + str1 + str2
 password = random.sample(word, 8)
 print('무작위 8자리 비밀번호:',''.join(password))
 
-# teach.Task2_0430
+### teach.Task2_0430
 import random
 str1 = string.ascii_letters
 print(str1)
@@ -516,21 +516,21 @@ characters = str1 + numbers
 passwords = ''.join(random.choice(characters) for i in range(8))
 print("랜덤 비밀번호 : ", passwords)
 
-# if 대문자, 소문자, 숫자가 한번씩은 반드시 포함되야 하는 경우
+### if 대문자, 소문자, 숫자가 한번씩은 반드시 포함되야 하는 경우
 upper = random.choice(string.ascii_uppercase)
 lower = random.choice(string.ascii_lowercase)
 digit = random.choice(string.digits)
 
 characters = string.ascii_letters + string.digits
 rest = ''.join(random.choice(characters) for i in range(5))
-# 모든 요소를 하나의 문자열로 합치기
+### 모든 요소를 하나의 문자열로 합치기
 password = upper + lower + digit + rest
 print(password)
 password = ''.join(random.sample(password, len (password))) # 선택할 시퀸스, 요소
 print('랜덤 비밀번호 : ',password)
 
 
-# Task3_0430. 발표자 수를 랜덤하게 출력하는 프로그램을 작성하세요.
+### Task3_0430. 발표자 수를 랜덤하게 출력하는 프로그램을 작성하세요.
 - (발표자 수 입력)
 import random
 
@@ -543,7 +543,7 @@ presenters = random.sample(kita, pick)
 
 print(f'발표자 : {presenters}')
 
-# Task4_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 구구단을 
+### Task4_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 구구단을 
 - 출력하는 프로그램을 작성하세요.
 title = '구구단 프로그램'
 num1 = input('1~9 사이 숫자 입력:')
@@ -555,7 +555,7 @@ for i in range(1,10):
     print(f'{num1}*{i} = {num1 * i}')
     
 
-# if 한번에 출력
+### if 한번에 출력
 for i in range(2, 10):
     print(f"{' '*5}{i}단{' '*5}", end = '\t')
 print()     # f-string내에서 { } 안에는 변수 뿐만 아니라 Python 표현식도 올 수 있음.
@@ -569,7 +569,7 @@ for i1 in range(1,10):
         print(f"{i2} * {i1} = {i1 * i2}\t", end = '') 
     print()
 
-# Task5_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 팩토리얼을 계산하세요.
+### Task5_0430. 사용자로부터 숫자를 입력받아 해당 숫자의 팩토리얼을 계산하세요.
 num = int(input('숫자입력:'))
 result = 1
 
@@ -578,7 +578,7 @@ for i in range(1, num+1):
     
 print(result)
 
-# Task6_0430. 0부터 20까지의 숫자 중에서 짝수와 홀수를 분리하여
+### Task6_0430. 0부터 20까지의 숫자 중에서 짝수와 홀수를 분리하여
 - 두 개의 리스트에 저장하세요.
 numbers1 = []
 numbers2 = []
@@ -591,20 +591,20 @@ for i in range(21):
         
 print(numbers1, numbers2)
 
-# Task7_0430. 주어진 리스트에서 최대값을 찾아 출력하세요.
+### Task7_0430. 주어진 리스트에서 최대값을 찾아 출력하세요.
 numbers = [34, 78, 2, 45, 99 ,23]
 
 max_value = max(numbers)
 print(max_value)
 
-# teach.Task7_0430.
+### teach.Task7_0430.
 max = 0
 for i in numbers:
     if i > max :
         max = i
 print(max)
 
-# Task8_0430.  1부터 10 사이의 임의의 숫자를 맞추는 게임을 만드세요.
+### Task8_0430.  1부터 10 사이의 임의의 숫자를 맞추는 게임을 만드세요.
 - 사용자가 숫자를 맞출 때까지 입력을 계속 받으며, 정답을 맞추면 게임을 종료하세요.
 import random
 print('Up & Down 게임')
@@ -625,7 +625,7 @@ while True:
         print('잘못 입력함!')
 
 
-# Task9_0430. 태어난 연도를 입력받아 띠를 출력하는 프로그램을 작성하세요.
+### Task9_0430. 태어난 연도를 입력받아 띠를 출력하는 프로그램을 작성하세요.
 ani_year = ['쥐','소','호랑이','토끼','용','뱀','말','양','원숭이','닭','개','돼지']
 
 while True:
@@ -638,14 +638,14 @@ while True:
     else:
         print(f'{year}년생은 {animal}띠입니다.')
 
-# teach.Task9_0430.
+### teach.Task9_0430.
 - 0년 부터 시작할 경우(2024/12) = 8이므로 8번째 인덱스 값 원숭이로 list 순서 변경
 x = ['원숭이','닭','개','돼지','쥐','소','호랑이','토끼','용','뱀','말','양']
 y = int(input('출생년도 입력 : '))
 print(f'{x[y%12]} 띠')
 
 
-# Task10_0430. 아래 사항을 반영하여 커피 자판기 프로그램을 작성하세요.
+### Task10_0430. 아래 사항을 반영하여 커피 자판기 프로그램을 작성하세요.
 - 시나리오 : 자판기 커피 재고 5잔, 커피 1잔 가격 300원, 재고 범위내에서 300원 이상 돈을 넣으면
 -            거스름돈과 커피를 주고 그렇지 않으면 반환하며 재고가 소진되면 안내멘트 출력
 - - 각 Case별 멘트 출력은 상황에 맞게 창작
@@ -669,7 +669,7 @@ print('*커피 자판기*')
 my_money = int(input('투입 금액 : '))
 coffee_machine(my_money)
 
-# teach.Task10_0430.
+### teach.Task10_0430.
 coffee_cnt = 5
 
 while True:
@@ -692,7 +692,7 @@ while True:
         break
 
 
-# Task1_0502. 짝수와 짝수를 입력하면 곱한 값을 출력하고 홀수와 홀수를 입력하면 덧셈 값을 출력하고 그외는 다시 입력하라는 메시지를 출력하세요.
+### Task1_0502. 짝수와 짝수를 입력하면 곱한 값을 출력하고 홀수와 홀수를 입력하면 덧셈 값을 출력하고 그외는 다시 입력하라는 메시지를 출력하세요.
 
 num1 = int(input('정수 입력 : '))
 num2 = int(input('정수 입력 : '))
@@ -708,7 +708,7 @@ else:
     print('다시 입력하시오')
 
 
-# Task2_0502. 현재 계절 구분 프로그램
+### Task2_0502. 현재 계절 구분 프로그램
 - 시나리오 : 3 ~ 5월은 봄, 6 ~ 8월은 여름, 9 ~ 11월은 가을,
 -             12 ~ 2월은 겨울로 구분. 지금 계절을 알려주는 프로그램
 - 각 계절별 출력 멘트는 계절에 맞게 창작
@@ -730,7 +730,7 @@ for season, months in seasons:
 else:
     print('날짜 오류')
 
-#%% teach.Task2_0502.
+### teach.Task2_0502.
 from datetime import datetime
 spring = [3, 4, 5]
 summer = [6, 7, 8]
@@ -749,7 +749,7 @@ elif month in summer:
 else:
     print('겨울')
 
-# method.2
+### method.2
 t = datetime.datetime.now()
 print('현재 계절은?')
 if t.month<12 and t.month >= 9:
@@ -763,7 +763,7 @@ else:
 
 
 
-# Task3_0502. 1부터 99까지 아래와 같이 2개의 수를 곱해서 가장 큰 수를 구하세요.
+### Task3_0502. 1부터 99까지 아래와 같이 2개의 수를 곱해서 가장 큰 수를 구하세요.
 - `1*99, 2*98 ...99*1`
 
 result = 0
@@ -776,7 +776,7 @@ for i1 in range(1,100):
 
 print('최대값',result)
 
-#%% teach.Task3_0502.
+### teach.Task3_0502.
 max_value = 0
 for i in range(1, 100):
     if max_value > (i*(100-i)):
@@ -785,7 +785,7 @@ for i in range(1, 100):
         max_value = i*(100-i)
 print(max_value)
 
-# while문 사용
+### while문 사용
 while n <= 100:
     a = n*(100-n)
     if a > result:
@@ -796,7 +796,7 @@ while n <= 100:
         continue
 print(result)
 
-# 메소드 사용 예제
+### 메소드 사용 예제
 def findBiggestOne():
     result = 0
     for i in range(1,100):
@@ -806,7 +806,7 @@ def findBiggestOne():
     return(result)
 print(findBiggestOne())
 
-# teach.메소드. 입력값 업속 출력값만 있는 형태의 사용자 함수
+### teach.메소드. 입력값 업속 출력값만 있는 형태의 사용자 함수
 def findBiggestOne():
     biggestNum = 0
     for i,j in zip(range(1,100), range(99,0,-1)):
@@ -816,14 +816,14 @@ def findBiggestOne():
 print(findBiggestOne())    
 
 
-# Task4_0502. [    ]을 채워서 아래의 출력과 같이 출력하세요.
+### Task4_0502. [    ]을 채워서 아래의 출력과 같이 출력하세요.
 numbers = [1,2,3,4,5,6,7,8,9]
 output = [[], [], []] # [[1,4,7],[2,5,8],[3,6,9]]
 
 output = [[1,4,7],[2,5,8],[3,6,9]]
 output = [numbers[0::3], numbers[1::3],numbers[2::3]]
 
-#%% teach.Task4_0502.
+### teach.Task4_0502.
 numbers = [1,2,3,4,5,6,7,8,9]
 output = [[],[],[]]
 
@@ -836,15 +836,15 @@ for num in numbers:
         output[2].append(num)
 print(output)
 
-# method.2
+### method.2
 for number in numbers:
     output[(number-1)%3].append(number)
 print(output)
 
 
 
-# Task5_0502. 주어진 리스트에서 중복된 요소를 제거하고,
-# 남은 요소만을 포함하는 새 리스트를 반환합니다. 순서는 유지해야 합니다.
+### Task5_0502. 주어진 리스트에서 중복된 요소를 제거하고,
+- 남은 요소만을 포함하는 새 리스트를 반환합니다. 순서는 유지해야 합니다.
 
 input_list = [1, 2, 2, 3, 4, 4, 4, 5, 6, 7, 7]
 
@@ -852,7 +852,7 @@ set1 = set(input_list)
 set1 = list(set1)
 print(set1)
 
-# method.2
+### method.2
 items = []
 for i in input_list:
     if i not in items:
@@ -866,7 +866,7 @@ for i in input_list:
 print(input_list)
 
 
-# method (응용예제)
+### method (응용예제)
 input_list = [1, 2, 6, 2, 3, 7, 4, 4, 5, 6, 7, 7]
 
 def remove_dup(input_list):
@@ -880,8 +880,8 @@ result=remove_dup(input_list)
 print(result)
 
 
-# Task6_0502. 주어진 문자열을 모스 코드로 변환하는 함수를 작성하세요.
-# 공백은 무시하고 알파벳만 변환하세요.
+### Task6_0502. 주어진 문자열을 모스 코드로 변환하는 함수를 작성하세요.
+- 공백은 무시하고 알파벳만 변환하세요.
 morse_code = {
         'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.',
         'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..',
@@ -898,7 +898,7 @@ for i in text_word:
          result += morse_code[i] + '`'
 print(result)
 
-# teach.Task6_0502.
+## teach.Task6_0502.
 
 for char in input_text:
     if char.upper() in morse_code:
@@ -907,8 +907,7 @@ for char in input_text:
 print(result)
 
 
-# Task7_0502. 주어진 비대칭 m×n 매트릭스(2차원 리스트)에서, 모든 대각선 상의
-# 합을 계산하는 함수를 작성하세요. 결과는 각 대각선의 합을 리스트로 반환해야 합니다.
+## Task7_0502. 주어진 비대칭 m×n 매트릭스(2차원 리스트)에서, 모든 대각선 상의 합을 계산하는 함수를 작성하세요. 결과는 각 대각선의 합을 리스트로 반환해야 합니다.
 - 반환값 : [1, 6, 15, 24, 20, 12]
 
 input_matrix = [
@@ -938,7 +937,7 @@ def diagonal_sums(matrix):
 
     return result
 
-# 매트릭스 입력
+### 매트릭스 입력
 input_matrix = [
     [1, 2, 3],
     [4, 5, 6],
@@ -946,11 +945,11 @@ input_matrix = [
     [10, 11, 12]
 ]
 
-# 대각선 합 결과 출력
+### 대각선 합 결과 출력
 print(diagonal_sums(input_matrix))
 
 
-# Task1_0503. 여러개의 음식을 동시에 주문할 수 있는 주문 시스템을 작성하세요.(구조 지향)
+### Task1_0503. 여러개의 음식을 동시에 주문할 수 있는 주문 시스템을 작성하세요.(구조 지향)
 - global 사용
 - logic : 메뉴선택 -> 수량선택 -> 세트여부 선택 -> 추가 주문여부결정
 
@@ -1073,7 +1072,7 @@ if __name__ == "__main__":
 
 
 
-# Task2_0503. 내장함수 5개를 활용해서 사용자 함수로 간단한 프로그램을 만드세요.
+### Task2_0503. 내장함수 5개를 활용해서 사용자 함수로 간단한 프로그램을 만드세요.
 
 - [예시] 문서관리 프로그램
 - len() - 문자열의 길이를 계산합니다.\
@@ -1108,7 +1107,7 @@ print(type(af_pw))
 print(type(re_pw))
 
 
-#teach.Task2_0503
+### teach.Task2_0503
 def string_statistics(user_input):
     #문자열 길이 변환
     length = len(user_input)
@@ -1138,7 +1137,7 @@ user_input = input('문자열 입력:')
 string_statistics(user_input)
 
 
-# Task3_0503. 외장함수 3개 이상 활용해서 간단한 프로그램을 만드세요
+### Task3_0503. 외장함수 3개 이상 활용해서 간단한 프로그램을 만드세요
 from datetime import datetime
 import random
 import time
@@ -1159,7 +1158,7 @@ jackpot_Num.sort()
 print(f'{now.year}년도 {now.month}월, {now.day}일자\n로또 당첨 번호는 {jackpot_Num} 입니다.')
 
 
-#teach.Task3_0503
+### teach.Task3_0503
 
 import os
 import datetime
@@ -1191,7 +1190,7 @@ if __name__ == "__main__":
 
 
 
-# Task4_0503. 리스트를 작성하고 람다 함수를 이용해서 한번에 함수를 적용하여 결과값을 출력하세요.
+### Task4_0503. 리스트를 작성하고 람다 함수를 이용해서 한번에 함수를 적용하여 결과값을 출력하세요.
 - 내장함수 map(f,iterable)
 - 함수(f)와 반복가능한(iterable)자료형 입력으로 받는다.
 - map은 입력받은 자료형의 각 요소를 함수 f가 수행한 결과를 묶어서 돌려준다.
@@ -1211,7 +1210,7 @@ print(list(filtered_numList))
 
 
 
-# Task5_0503. 외부 라리브러리를 임포트해서 간단한 프로그램을 만드세요.
+### Task5_0503. 외부 라리브러리를 임포트해서 간단한 프로그램을 만드세요.
 - from bs4 import BeautifulSoup
 - html_doc = "<html><head><title>Hello World</title></head></html>"
 - soup = BeautifulSoup(html_doc, 'html.parser')
@@ -1240,7 +1239,7 @@ if __name__=="__main__":
 
 
 
-# Task1_0507. 튜플 형태인 strings를 다양한 문자가 포함된 순서로 정렬하세요.
+### Task1_0507. 튜플 형태인 strings를 다양한 문자가 포함된 순서로 정렬하세요.
 strings = ('a', 'ca', 'bar', 'aaaa', 'ababa')
 
 sorted_strings = sorted(strings, key = lambda x : len(set(x)), reverse = True)
@@ -1252,14 +1251,14 @@ print(list(strings))
 
 
 
-# Task2_0507. eval 함수를 활용하여 a,b 변수와 연산자를 입력하면 사칙연산을 수행하는 코드를 작성하세요.
+### Task2_0507. eval 함수를 활용하여 a,b 변수와 연산자를 입력하면 사칙연산을 수행하는 코드를 작성하세요.
 - (eval 사용하는 경우와 안하는 경우)
 - eval 사용
 - num1 = input('a,b,연산자(사칙연산) 입력 (ex. 1 + 2 >> ')
 - result = eval(num1)
 - print(f'{num1} = {result}')
 
- # eval 미사용
+ ### eval 미사용
  num1 = int(input('num1 입력 : '))
  num2 = int(input('num2 입력 : '))
  num3 = input('연산자 입력 : ')
@@ -1280,7 +1279,7 @@ print(list(strings))
  else :
      print('잘못입력함')
 
-# teach.Task2_0507
+### teach.Task2_0507
 
 num = input('5+5 :')
 math = ['+', '-', '/', '*']
@@ -1293,7 +1292,7 @@ for i in num_list:
         print(math[i](int(num[0]), int(num[1])))
 
 
-# Task3_0507. list1에 대해서 아래와 같이 출력하는 코드를 작성하세요.
+### Task3_0507. list1에 대해서 아래와 같이 출력하는 코드를 작성하세요.
  인사평가 1번째 해당자는 김부장입니다. 회의실A로 오시기 바랍니다.\
  인사평가 2번째 해당자는 이차장입니다. 회의실A로 오시기 바랍니다.\
  인사평가 3번째 해당자는 김과장입니다. 회의실A로 오시기 바랍니다.\
@@ -1308,7 +1307,7 @@ for idx, person in enumerate(list1):
 
 
 
-# Task4_0507. 주어진 문자열 리스트의 요소들을 대문자로 변환하세요.
+### Task4_0507. 주어진 문자열 리스트의 요소들을 대문자로 변환하세요.
 words = ["hello", "world", "python", "map"]
 big = []
 
@@ -1317,7 +1316,7 @@ for char in words:
     big.append(text)
 print(big)
 
-#teach.Task4_0507
+### teach.Task4_0507
 #1 
 print([i.upper() for i in words])
 
@@ -1338,7 +1337,7 @@ print(upper_words)
 
 
 
-# Task5_0507. 주어진 리스트에서 'p'로 시작하는 단어만 필터링하세요.
+### Task5_0507. 주어진 리스트에서 'p'로 시작하는 단어만 필터링하세요.
 words = ["python", "is", "powerful", "programming", "language", "pandas"]
 result = [i for i in words if i[0] == 'p']
 print(result)
@@ -1351,7 +1350,7 @@ p_words = list(filter(lambda x: x.startswith('p'), words)) # 필터함수 사용
 print(p_words)
 
 
-# Task6_0507. 내장함수를 이용해서 list = [0,1,7,3,4,5,6]에서 7를 삭제 후 출력하세요.
+### Task6_0507. 내장함수를 이용해서 list = [0,1,7,3,4,5,6]에서 7를 삭제 후 출력하세요.
 list1 = [0,1,7,3,4,5,6]
 
 list1.remove(7) # 값
@@ -1361,14 +1360,14 @@ print(list1)
 
 
 
-# Task8_0507. url에서 호스트 도메인(news.naver.com)을 추출하여 출력하세요.
+### Task8_0507. url에서 호스트 도메인(news.naver.com)을 추출하여 출력하세요.
 url = 'http://news.naver.com/main/read.nhn?mode=LSD&mid=shm&sid1=105&oid=028&aid=0002334601'
 print(url.split('/')[2])
 print(list1)
 
 
 
-# Task1_0508. title() 함수를 사용하지 않고 동일한 결과를 출력하세요.
+### Task1_0508. title() 함수를 사용하지 않고 동일한 결과를 출력하세요.
 
 name = input('이름입력:')
 name_list = name.strip().split(" ")
@@ -1383,8 +1382,8 @@ print(result)
 
 
 
-# Task2_0507. join 함수를 이용해서 ['a','b','c']을 아래와 같이 출력하세요.
-# a::b::c
+### Task2_0507. join 함수를 이용해서 ['a','b','c']을 아래와 같이 출력하세요.
+- a::b::c
 
 list1 = ['a','b','c']
 
@@ -1392,7 +1391,7 @@ result = '::'.join(list1)
 print(result)
 
 
-# Task3_0508. 다음을 수행하세요.
+### Task3_0508. 다음을 수행하세요.
 - 사용자로부터 문자열을 입력받습니다.
 - 입력받은 문자열이 숫자로만 이루어져 있는지 확인합니다.
 - 만약 숫자로만 이루어져 있다면, 그 숫자를 정수로 변환하여 100을 더한 결과를 출력합니다.
@@ -1414,7 +1413,7 @@ while True:
         print('잘못 입력하셨습니다')
 
 
-# Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
+### Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
 - 사용자로부터 문자열을 입력받습니다.
 - 입력받은 문자열이 알파벳과 숫자로만 이루어져 있는지 확인합니다.
 - 만약 조건을 만족한다면 "유효한 아이디입니다"라고 출력합니다.
@@ -1429,7 +1428,7 @@ else :
 
 
 
-# Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
+### Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
  list = []
  for i in range(0,20,2):
      list.append(i*i)
@@ -1439,7 +1438,7 @@ print([i*i for i in range(0,20,2)])
 
 
 
-# Task6_0508. 유닉스 타임스탬프를 받아서 해당 시간을 datetime.datetime 객체로 변환하고, 그 결과를 출력하는 사용자 함수를 작성하여 임의의 타임스탬프를 입력하여 결과를 출력하세요.
+### Task6_0508. 유닉스 타임스탬프를 받아서 해당 시간을 datetime.datetime 객체로 변환하고, 그 결과를 출력하는 사용자 함수를 작성하여 임의의 타임스탬프를 입력하여 결과를 출력하세요.
 
 from datetime import datetime
 
@@ -1453,8 +1452,7 @@ print(changetimestamp(k))
 
 
 
-# Task7_0508. datetime 객체를 문자열로 변환하는 사용자 함수를 작성하여 datetime
-# 객체를 "YYYY-MM-DD HH:MM:SS" 형식의 문자열로 변환하고 출력하세요.
+### Task7_0508. datetime 객체를 문자열로 변환하는 사용자 함수를 작성하여 datetime 객체를 "YYYY-MM-DD HH:MM:SS" 형식의 문자열로 변환하고 출력하세요.
 from datetime import datetime
 
 def datetimetostr():
@@ -1466,7 +1464,7 @@ print(datetimetostr())
 
 
 
-# Task8_0508. 올해 경과된 날짜수 계산하세요.
+### Task8_0508. 올해 경과된 날짜수 계산하세요.
 import datetime
 
 date1 = datetime.date(2023,12,31)
@@ -1481,7 +1479,7 @@ print(date.strftime('%j'))
 
 
 
-# Task9_0508. 현재 요일을 "2021-6-26 오늘은 토요일입니다."와 같은 형식으로 출력하세요.
+### Task9_0508. 현재 요일을 "2021-6-26 오늘은 토요일입니다."와 같은 형식으로 출력하세요.
 from datetime import datetime
 
 s = datetime.now()
@@ -1489,8 +1487,7 @@ print(s.strftime('%Y-%m-%d 오늘은 {%A}입니다.'))
 
 
 
-# Task10_0508. 1에서 백만까지 더하는데 걸리는 프로그램 실행 시간을 
-# 밀리초(ms) 단위로 구하세요.(1ms=0.001초)
+### Task10_0508. 1에서 백만까지 더하는데 걸리는 프로그램 실행 시간을 밀리초(ms) 단위로 구하세요.(1ms=0.001초)
 import time
 result = 0
 
@@ -1501,7 +1498,7 @@ end = time.time()
 
 print(f'{(end - start)*1000}ms')
 
-# teach_Task1_0507
+### teach_Task1_0507
 
 a = input("이름을 영어로 입력하세요.")
 
@@ -1518,7 +1515,7 @@ for i in range(len(b)):
 print(f"당신의 이름을 바꾸면 {e}입니다.")
 
 
-# Task2_0507. join 함수를 이용해서 ['a','b','c']을 아래와 같이 출력하세요.
+### Task2_0507. join 함수를 이용해서 ['a','b','c']을 아래와 같이 출력하세요.
 - a::b::c
 
 list1 = ['a','b','c']
@@ -1528,7 +1525,7 @@ print(result)
 
 
 
-# Task3_0508. 다음을 수행하세요.
+### Task3_0508. 다음을 수행하세요.
 - 사용자로부터 문자열을 입력받습니다.
 - 입력받은 문자열이 숫자로만 이루어져 있는지 확인합니다.
 - 만약 숫자로만 이루어져 있다면, 그 숫자를 정수로 변환하여 100을 더한 결과를 출력합니다.
@@ -1546,7 +1543,7 @@ while True:
         print('잘못 입력하셨습니다')
 
 
-# teach_Task3_0508.
+### teach_Task3_0508.
 while 1:
   num = input('숫자를 입력하세요.')
   if num.isdigit():
@@ -1557,7 +1554,7 @@ while 1:
 
 
 
-# Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
+### Task4_0508. 문자와 숫자로만 구성된 아이디만 유효한 규칙을 만들려고 한다. 아래 사항을 참조하여 프로그램을 작성하세요.
 - 사용자로부터 문자열을 입력받습니다.
 - 입력받은 문자열이 알파벳과 숫자로만 이루어져 있는지 확인합니다.
 - 만약 조건을 만족한다면 "유효한 아이디입니다"라고 출력합니다.
@@ -1573,7 +1570,7 @@ while 1:
 
 
 
-# Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
+### Task5_0508. 코딩을 한줄로 작성해서 동일한 결과를 출력하세요.
 - list = []
 - for i in range(0,20,2):
 -     list.append(i*i)
@@ -1581,12 +1578,12 @@ while 1:
 
 print([i*i for i in range(0,20,2)])
 
-# teach_Task5_0508
+### teach_Task5_0508
 print(list(map(lambda x: x*x, range(0,20,2))))
 
 
 
-# Task6_0508. 유닉스 타임스탬프를 받아서 해당 시간을 datetime.datetime 객체로 변환하고, 그 결과를 출력하는 사용자 함수를 작성하여 임의의 타임스탬프를 입력하여 결과를 출력하세요.
+### Task6_0508. 유닉스 타임스탬프를 받아서 해당 시간을 datetime.datetime 객체로 변환하고, 그 결과를 출력하는 사용자 함수를 작성하여 임의의 타임스탬프를 입력하여 결과를 출력하세요.
 
 from datetime import datetime
 def changetimestamp():
@@ -1595,7 +1592,7 @@ def changetimestamp():
     return datetime.fromtimestamp(t)
 print(changetimestamp())
 
-# teach.Task6_0508
+### teach.Task6_0508
 def timestamp_to_datetime(timestamp):
     return datetime.fromtimestamp(timestamp)
 ts = float(input('timestamp 입력 : '))
@@ -1603,7 +1600,7 @@ dt = timestamp_to_datetime(ts)
 print(dt)
 
 
-# Task7_0508. datetime 객체를 문자열로 변환하는 사용자 함수를 작성하여 datetime
+### Task7_0508. datetime 객체를 문자열로 변환하는 사용자 함수를 작성하여 datetime
 - 객체를 "YYYY-MM-DD HH:MM:SS" 형식의 문자열로 변환하고 출력하세요.
 from datetime import datetime
 
@@ -1614,7 +1611,7 @@ def datetimetostr():
 print(datetimetostr())
 
 
-# teach_Task7_0508.
+### teach_Task7_0508.
 import datetime
 def datetime_to_string(dt):
     return dt.strftime('%Y-%m-%d %H:%M:%S')
@@ -1625,7 +1622,7 @@ s = datetime_to_string(dt)
 print(s)
 
 
-# Task8_0508. 올해 경과된 날짜수 계산하세요.
+### Task8_0508. 올해 경과된 날짜수 계산하세요.
 import datetime
 
 date1 = datetime.date(2024,1,1)
@@ -1639,7 +1636,7 @@ date = datetime.now()
 print(date.strftime('%j'))
 
 
-# teach.Task8_0508.
+### teach.Task8_0508.
 - current_date = datetime.date.today()
 - start_of_year = datetime.date(current_date.year, 1,1)
 - days_passed = (current_date - start_of_year).days
@@ -1653,14 +1650,14 @@ numday.tm_yday
 
 
 
-# Task9_0508. 현재 요일을 "2021-6-26 오늘은 토요일입니다."와 같은 형식으로 출력하세요.
+### Task9_0508. 현재 요일을 "2021-6-26 오늘은 토요일입니다."와 같은 형식으로 출력하세요.
 from datetime import datetime
 
 s = datetime.now()
 print(s.strftime('%Y-%m-%d 오늘은 %A입니다.'))
 
 
-# method_2
+### method_2
 import time
 from datetime import datetime
 
@@ -1671,20 +1668,20 @@ date = now.date()
 wday = now.strftime("%a")
 
 
-# teach.Task9_0508
+### teach.Task9_0508
 import time
 
 weekdays = ['월요일','화요일','수요일','목요일','금요일','토요일','일요일']
 t = time.localtime()
 today = f'{t.tm_year}-{t.tm_mon}-{t.tm_mday}'
 week = weekdays[t.tm_wday]
-# print('%s 오늘은 %s입니다' %(today, week))
+### print('%s 오늘은 %s입니다' %(today, week))
 print(f'{today} 오늘은 {week}입니다.')
 
 print(f'{date} 오늘은 {wdays[wday]}입니다.')
 
 
-# Task10_0508. 1에서 백만까지 더하는데 걸리는 프로그램 실행 시간을
+### Task10_0508. 1에서 백만까지 더하는데 걸리는 프로그램 실행 시간을
 - 밀리초(ms) 단위로 구하세요.(1ms=0.001초)
 import time
 result = 0
@@ -1697,7 +1694,7 @@ end = time.time()
 print(f'{(end - start)*1000} ms')
 
 
-# method_2
+### method_2
 import time
 
 start = time.time()
@@ -1710,7 +1707,7 @@ h, m = divmod(minute, 60)
 print(f'{int(h)}시간 {int(minute)}분 {second:.3f}초')
 
 
-# teach.Task10_0508.
+### teach.Task10_0508.
 import time
 
 t1 = time.time()
@@ -1723,3 +1720,497 @@ else:
     t2 = time.time()
 
 print(f'백만까지 더한 값: {result}\n걸린 시간: {round((t2-t1)*1000)} (ms)')
+
+
+### Task1_0509. 주어진 텍스트에서 문자 빈도를 아래와 같이 출력하세요.(사용자 함수 사용)
+
+- 가장 많이 나온 문자 5개를 뽑아 봤습니다.\
+- [e] -> [97]회 나타남\
+- [t] -> [85]회 나타남\
+- [a] -> [78]회 나타남\
+- [o] -> [73]회 나타남\
+- [s] -> [60]회 나타남
+
+import re
+def getTarget():
+    word_list = data
+    words_list = re.sub(r'[,.!\n\' '']','', word_list.lower())
+    word_list = list(words_list)
+    print('가장 많이 나온 문자 5개를 뽑아 봤습니다.')
+    result = {}
+    for i in word_list:
+        if i in result:
+            result[i] += 1
+        else :
+            result[i] = 1
+    result = sorted(result.items(), key= lambda x : x[1], reverse = True)
+
+    for i in range(min(5, len(result))):
+        word, count = result[i]
+        print(f'[{word}] -> [{count}]회 나타남')
+
+getTarget()
+
+import re
+word_list = data
+words_list = re.sub(r'[,.!\n\' '']','', word_list.lower())
+word_list = list(words_list)
+                  
+
+#### #2 
+def getTarget():
+    print('가장 많이 나온 문자 5개를 뽑아 봤습니다.')
+    result = {}
+    for i in word_list:
+        if i in result:
+            result[i] += 1
+        else :
+            result[i] = 1
+    result = sorted(result.items(), key= lambda x : x[1], reverse = True)
+
+    for i in range(min(5, len(result))):
+        word, count = result[i]
+        print(f'[{word}] -> [{count}]회 나타남')
+
+getTarget()
+
+
+
+### Task2_0509.  람다함수와 적합한 내장함수를 사용하여 아래와 같이 출력하세요.
+- [1,2,3,4,5] -> [1,4,9,16,25]
+- [1,2,3,4,5] -> [1,2]
+
+numList = [1,2,3,4,5]
+
+print(list(map(lambda x : x * x, numList)))
+print(list(filter(lambda x : x < 3, numList)))
+
+
+
+### Task3_0509. [1,-3,2,0,-5,6] 에서 양수만 필터링해서 출력하세요(내장함수, 사용자함수 각각 이용)
+#사용자 함수
+
+def CheckNum(li):
+    result = []
+    for i in li:
+        if i > 0:
+            result.append(i)
+    return result
+
+li = [1,-3,2,0,-5,6]
+print(CheckNum(li))
+
+#### 내장함수
+numlist = [1,-3,2,0,-5,6]
+print(list(filter(lambda x : x > 0, numlist)))
+
+#### 간편한 for문
+sample6 = [1,-3,2,0,-5,6]
+ans6_2 = [i for i in sample6 if i > 0]
+print(ans6_2)
+
+
+
+### Task4_0509. **args를 이용하여 아래와 같이 출력할 수 있는
+- 사용자 함수 func2를 작성하세요.
+- Width: 100\
+- Height: 200\
+- Other arguments: {'color': 'red', 'thickness': 5}
+
+- Width: 100\
+- Height: 200\
+- Other arguments: {'color': 'red', 'thickness': 5, 'type': 'large'}
+
+def func2(width, height, **args):
+    print(f'Width: {width}\nHeight: {height}\nOther arguments: {args}')
+
+func2(100, 200, color = 'red', thickness = 5)
+func2(100, 200, color = 'red', thickness = 5, type = 'large')
+
+
+### Task5_0509. 아래와 같은 결과를 얻을 수 있도록 사용자 함수 func3를 작성하세요.
+- Width: 100, Height: 200, Color: blue, Thickness: 1
+- Width: 100, Height: 200, Color: red, Thickness: 15
+
+def func3(width,height,color,thickness):
+    print(f'Width: {width}, Height: {height}, Color: {color}, Thickness: {thickness}')
+
+func3(100, 200,'blue',1)
+func3(100,200,'red',15)
+
+
+### teach.Task5_0509
+def func3(a, b, color='blue', thickness=1):
+    print(f'Width: {a}, Height: {b}, Color: {color}, Thickness: {thickness}')
+
+func3(100,200)
+func3(100,200,color='red',thickness=15)
+
+
+### Task6_0509. 입력으로 들어오는 모든 수의 평균 값을 계산해 주는 함수를 작성한 후 1,2,3을 입력한 결과를 출력하세요.
+
+def avgNum(*args):
+    result = 0
+    total = 0
+    for i in args:
+        i = int(i)
+        total += i
+        result = total / len(args)
+    return print(f'평균값은 {result:.2f}이다')
+
+avgNum(input('숫자1 : '), input('숫자2 : '), input('숫자3 : '))
+
+### teach.Task6_0509
+def cal_average(*args):
+    return sum(args) / len(args)
+
+print(cal_average(1,2,3))
+print(cal_average(10,20,30,40,50))
+
+
+
+#%% Task7_0509. 원의 면적과 둘레의 길이를 구하는 사용자 함수를 작성하여
+# 반지름이 5와 10일때 면적과 둘레를 구하세요(반올림:round())
+
+def Circum(radius):
+    C = (radius * 2) * round(3.14159,2)
+    P = radius * radius * round(3.14159,2)
+    result = print(f'원의 둘레 : {C:.2f},원의 면적 : {P:.2f}')
+    return result
+
+Circum(5)
+Circum(10)
+
+### teach.Task7_0509
+import math
+def area_circumference(r):
+    area = math.pi*r*r
+    cir = 2*math.pi*r
+    print(f'면적: {round(area,2)}, 둘레:{round(cir,2)}')
+
+area_circumference(5)
+area_circumference(10)
+
+
+### Task8_0509. 게시물의 총 건수와 한 페이지에 보여 줄 게시물 수를 입력시 총 페이지 수를 출력하는 프로그램을 작성하세요.
+def total_Page(n):
+    result = 1
+    while True:
+        if n > 10 :
+            result += 1
+            n -= 10
+        else :
+            break
+    return result
+
+post = int(input('게시물 총 개수 : '))
+print('총 페이지 수:',total_Page(post))
+
+### teach.Task8_0509
+import math
+total = int(input('총 게시물 수 : '))
+show=int(input('한페이지 보여줄 게시물 수 : '))
+result = math.ceil(total/show) #math.ceil() 나머지 있을시 무조건 반올림
+print(f'총페이지 수는 {result} 입니다')
+
+
+### Task9_0509. 위의 문제를 *args를 사용한 사용자 함수 bignum을 작성하여 bignum(20,1,30)과 bignum(20,10,50,70, 100)의 결과를 출력하세요.
+
+def bignum(*args):
+    max_num = 0
+    for i in args:
+        if i > max_num :
+            max_num = i
+    return max_num
+
+print(bignum(20,1,30))
+print(bignum(20,10,50,70, 100))
+
+
+### teach.Task9_0509
+def big(*args):
+    return max(args)
+
+print(bignum(20,1,30))
+print(bignum(20,10,50,70, 100))
+
+
+### Task10_0509. 위의 계산을 연산자를 choice로 가변적인 숫자들을 *args로 사용한 사용자 함수 cal을 이용하여 다음을 수행하세요.
+
+def cal(choice, *args):
+    result = args[0]
+    for i in args[1:]:
+        if choice == '+':
+            result += i
+        if choice == '-':
+            result -= i
+        if choice == '*':
+            result *= i
+        if choice == '/':
+            if i == 0:
+                return print('오류')
+            else:
+                result /= i
+        else:
+            return '계산할 수 있는 기호가 아닙니다'
+    return result
+
+print(cal('*',1,2,3,4,5))
+print(cal('+',1,2,3,4,5,6,7))
+
+
+
+
+### Task1_0510. 4가지 예외 처리가 필요한 경우에 대해서 코딩을 수행하세요.
+- try ~ except, try ~ except ~ finally, try ~ except ~else, try ~ except ~else ~finally
+- try ~ except (숫자만 입력)
+try:
+    print(int(input('숫자만 입력하시오 >> ')))
+except ValueError as e:
+    print(f'예외처리 발생. {e}')
+
+else:
+    print(f'예외처리 미발생.')
+
+= try ~ except ~ finally (문자열만 필터링)
+try:
+    list1 = ['1','2','3','four','5ive','6','7','eight','nine','ten']
+    result = []
+    for i in list1:
+        result = result.append(i.isalpha())
+    print(result)
+
+except AttributeError as e:
+    print(f'예외처리 발생. {e}')
+
+finally:
+    result1 = [i for i in list1 if i.isalpha()]
+    print(result1)
+
+- try ~ except ~else
+try:
+    print(int(input('숫자만 입력하시오 >> ')))
+except ValueError as e:
+    print(f'예외처리 발생. {e}')
+else:
+    print(f'예외처리 미발생.')
+
+- try ~ except ~else ~finally (숫자만 입력)
+try:
+    num1 = int(input('num1 입력 :'))
+    num2 = int(input('num1 입력 :'))
+    divNum = num1 / num2
+except ZeroDivisionError as z:
+    print(f'예외발생. {z}')
+except ValueError as e:
+    print(f'예외발생. {e}')
+else:
+    print(divNum)
+finally:
+    print('!주의! 0 입력시, Error 발생합니다' )
+
+
+
+
+### teach.Task1_0510.
+#1-1
+try:
+    ans = int(input('정수값을 입력하세요:'))
+except:
+    print('잘못 입력하셨습니다. 다음에 다시 이용해주세요.')
+
+#1-2
+try:
+    ans = int(input('정수값을 입력하세요:'))
+except:
+    print('잘못 입력하셨습니다. 다음에 다시 이용해주세요.')
+finally:
+    print('프로그램을 종료합니다.')
+
+#1-3
+try:
+    ans = int(input('정수값을 입력하세요:'))
+except:
+    print('잘못 입력하셨습니다. 다음에 다시 이용해주세요.')
+else:
+    print(f'오늘의 행운의 숫자는 {ans} 입니다.')
+
+#1-4
+try:
+    ans = int(input('정수값을 입력하세요:'))
+except:
+    print('잘못 입력하셨습니다. 다음에 다시 이용해주세요.')
+else:
+    print(f'오늘의 행운의 숫자는 {ans} 입니다.')
+finally:
+    print('프로그램을 종료합니다.')
+
+
+
+### Task2_0510. ['52','273','32','문자','103']에서 숫자 부분만 출력(예외처리 수행)
+list1 = ['52','273','32','문자','103']
+try:
+    for i in list1:
+        chk = i.isdigit()
+        if chk == False:
+            list1.remove()
+except TypeError as e:
+    print('예외 발생! {e}')
+
+finally:
+    print('')
+    result = [i for i in list1 if i.isdigit()]
+    print(result)
+
+### teach.Task2_0510.
+list1 = ['52','273','32','문자','103']
+result = []
+for i in list1:
+    try:
+        result.append(int(i))
+    except:
+        pass
+print(result)
+
+
+### Task3_0510. 두가지 시나리오를 예외처리를 하여 코드 작업을 수행하세요.
+- 정수를 입력하면 > '예외 발생하지 않음' > '프로그램 종료'
+- 정수를 입력하지 않으면 > '정수 아님' > '프로그램 종료'
+
+try:
+    user = int(input('입력 : '))
+except :
+    print(f'정수 아님')
+else:
+    print(user)
+    print('예외 발생하지 않음')
+
+finally:
+    print('프로그램을 종료')
+
+
+### teach.Task4_0510.
+class Test :
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+        print(a+b)
+
+obj1 = Test(1,2)
+obj1 = Test(3,8)
+obj1 = Test(10,21)
+
+
+
+### teach.Task5_0510.
+class MyCar:
+    def __init__(self,name,color = 'white',price =2000):
+        self.name = name
+        self.color = color
+        self.price = price
+    
+    def car_sound(self):
+        if self.price > 15000:
+            print('부와아아')
+        elif self.price > 10000:
+            print('부웅부웅')
+        else:
+            print('털털털털')
+
+a = MyCar('아반떼')
+b = MyCar('페라리','red',17000)
+c = MyCar('벤츠','black',11000)
+
+print(a.name, a.color, a.price)
+print(b.price)
+print(c.color)
+
+a.car_sound()
+b.car_sound()
+c.car_sound()
+
+
+
+### Task6_0510. 여러개의 음식을 주문할 수 있는 주문 시스템을 작성하세요.(클래스 활용 - 객체 지향)
+class OrderSystem:
+    def __init__(self):
+        self.menu_items = {
+            '1': ("불고기 비빔밥", 12000),
+            '2': ("야채 비빔밥", 8000),
+            '3': ("전주 비빔밥", 10000)
+        }
+        self.set_price = 3000
+        self.orders = {}
+        self.price_total = 0
+
+    def display_menu(self):
+        print("\n♣♣♣ KITA 식당에 오신 것을 환영합니다 ♣♣♣")
+        print("========================================")
+        print("           - 메뉴 -")
+        for key, (name, price) in self.menu_items.items():
+            print(f"  {key}. {name} : {price}원")
+        print("\n  세트 주문시 : 3000원 추가 (세트는 밥과 반찬이 추가됩니다.)")
+        print("========================================")
+
+    def display_order_summary(self):
+        print("\n■장바구니")
+        self.price_total = 0
+        for key, (name, price) in self.menu_items.items():
+            count = self.orders.get((key, False), 0)
+            count_set = self.orders.get((key, True), 0)
+            print(f" {name} {count}개: {count * price}원")
+            print(f" {name} 세트 {count_set}개: {count_set * (price + self.set_price)}원")
+            self.price_total += (count * price) + (count_set * (price + self.set_price))
+        print(f" 총 금액 {self.price_total}원\n")
+
+    def add_order(self, menu_id, is_set):
+        item_name, item_price = self.menu_items[menu_id]
+        if is_set:
+            item_price += self.set_price
+        num = input(f"\n● {item_name}{' 세트' if is_set else ''} 몇 개 주문 하시겠습니까?\n")
+        if num.isdigit() and int(num) > 0:
+            self.orders[(menu_id, is_set)] = self.orders.get((menu_id, is_set), 0) + int(num)
+            print(f"\n{item_name}{' 세트' if is_set else ''} {num}개가 장바구니에 담겼습니다.\n")
+        else:
+            print('★양수만 입력하세요.★')
+
+    def process_order(self):
+        while True:
+            print('★비빔밥 주문 KIOSK★','\n')
+            msg = input("● 주문을 하시겠습니까? (y 또는 n) >> ").strip().lower()
+            if msg == 'y':
+                while True:
+                    self.display_menu()
+                    self.display_order_summary()
+                    choice = input("● 주문할 메뉴를 골라주세요. (불고기 비빔밥:1, 야채 비빔밥:2, 전주 비빔밥:3, 전체 취소:0, 결제:5) >> ").strip().lower()
+                    if choice in self.menu_items:
+                        set_choice = input("\n●3000원을 추가해 세트로 주문하시겠습니까? (일반주문시:n, 세트주문시:y)\n").strip().lower()
+                        if set_choice in ['y', 'n']:
+                            self.add_order(choice, set_choice == 'y')
+                        else:
+                            print('★올바른 선택을 입력하세요 (y 또는 n).★')
+
+                    elif choice == '0':
+                        self.orders.clear()
+                        print('\n모든 주문이 취소되었습니다.')
+
+                    elif choice == '5':
+                        if self.price_total > 0:
+                            print(f'\n●주문하려면 결제해주세요. 결제금액은 {self.price_total}원 입니다.\n')
+                            input("결제를 완료하려면 아무 키나 누르세요...")  # 사용자가 결제를 확인할 수 있도록 입력 대기
+                            print(f"\n총 금액은 {self.price_total}원이 결제 되었습니다. 감사합니다.",'\n')
+                            self.orders.clear()
+                            break
+                        else:
+                            print('★메뉴를 고르고 주문해주세요!★')
+
+                    else:
+                        print('★메뉴의 지정된 숫자로 입력하세요★')
+
+            else:
+                print('감사합니다.')
+                break
+
+if __name__ == "__main__":
+    order_system = OrderSystem()
+    order_system.process_order()
