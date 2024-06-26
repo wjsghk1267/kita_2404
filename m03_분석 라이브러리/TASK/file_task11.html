@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Element Example</title>
+</head>
+<body>
+    <button id="hidden_element_id" style="display:none;">Hidden Button</button>
+    <p id="message"></p>
+    <script>
+        document.getElementById('hidden_element_id').addEventListener('click', function() {
+            document.getElementById('message').innerText = 'Hidden Button Clicked!';
+        });
+    </script>
+</body>
+</html>
