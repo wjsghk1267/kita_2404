@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Input Field Example</title>
+  </head>
+  <body>
+    <h1>Fill the Input Field</h1>
+    <input type="text" id="inputField" value="initial value" />
+    <button id="submitButton">Submit</button>
+<!-- 자바스크립트 쓰려면 <script> 내부에 작성 -->
+    <script>
+      document.getElementById("submitButton").addEventListener("click", function () {
+        alert("Input field value: " + document.getElementById("inputField").value);
+      });
+    </script>
+  </body>
+</html>
