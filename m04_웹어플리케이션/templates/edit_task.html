@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+</head>
+<body>
+    <h1>Edit Task</h1>
+    <form method="POST" action="/edit/{{task.id}}">
+        <input type="hidden" name="csrf_token" value="{{ form.csrf_token._value()}}"/>
+
+        <p>
+            <label for="title"> Title: </label>
+            <input type="text" name="title" id="title" size="32" value="{{ form.title.data}}" required />
+        </p>
+        <p><input type="submit" value="Edit Task"/></p>
+    </form>
+    <a href="/">Back to Task List</a>   
+</body>
+</html>
