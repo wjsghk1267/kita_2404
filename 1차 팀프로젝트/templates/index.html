@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}
+책사이트 이름 - 프로젝트 개요
+{% endblock %}
+
+{% block content %}
+<style>
+    /* 프로젝트 제목을 감싸는 섹션 스타일 */
+    .project-title {
+        background-color: rgb(255, 255, 255, 100); /* 배경색을 흰색으로 */
+        padding: 2rem; /* 내부 여백 */
+        margin-top: 2rem; /* 상단 여백 */
+        border-radius: 8px; /* 둥근 모서리 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+        text-align: center; /* 텍스트를 중앙에 정렬 */
+    }
+    
+    /* <h1> 제목 스타일 */
+    .project-title h1 {
+        font-size: 2.5rem; /* 큰 텍스트 크기 */
+        color: #333; /* 어두운 회색 텍스트 색상 */
+        font-family: 'Arial', sans-serif; /* 산세리프 폰트 */
+        font-weight: bold; /* 볼드체 */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* 텍스트 그림자 */
+        margin: 0; /* 기본 여백 제거 */
+    }
+</style>
+<main>
+    <section class="project-title container p-4 shadow-sm fade-in">
+        <h1>2024년도 도서 트렌드에 대한 분석 사이트</h1>
+    </section>
+</main>
+{% endblock %}
