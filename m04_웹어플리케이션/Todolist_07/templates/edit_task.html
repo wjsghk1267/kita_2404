@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block title %}Edit Task{% endblock%}
+
+{% block header %}Edit Task{% endblock%}
+<!-- </head> -->
+{% block content %}
+    <form method = "POST" action = "/edit/{{task_id}}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token}}"/>
+        <p>
+            <label for="title">제목</label><br />
+            <input type="text" name="title" id="title" size="32" value="{{ task_title }}" required />
+        </p>
+        <p>
+            <label for="contents">내용</label><br />
+            <textarea name="contents" id="contents" rows="4" required>{{ task_contents }}</textarea>
+        </p>
+
+        <p>
+            <label for="due_date">마감일</label><br />
+            <input type="date" name="due_date" id="due_date" value="{{task_due_date}}" required />
+        </p>
+        <p><input type="submit" value="Edit Task" /></p>
+    </form>
+    <p>등록일: {{ task_input_date }} </p>
+    <a href="/">Back to Task List</a>
+
+
+{% endblock%}
+<!-- </html> -->

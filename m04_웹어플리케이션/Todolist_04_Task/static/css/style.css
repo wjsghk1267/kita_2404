@@ -1,0 +1,172 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f0f0f0; /* 모던하고 깔끔한 배경색 */
+}
+.section1 {
+  margin: 0 auto;
+  width: 50%;
+  background-color: lightblue;
+  padding: 10px;
+  text-align: center;
+}
+.section2 {
+  margin: 0 auto;
+  width: 50%;
+  background-color: lightgreen;
+  padding: 10px;
+  text-align: center;
+}
+.section3 {
+  margin: 0 auto;
+  width: 50%;
+  background-color: lightcoral;
+  padding: 10px;
+  text-align: center;
+}
+.section4 {
+  margin: 0 auto;
+  width: 50%;
+  background-color: lightblue;
+  padding: 10px;
+  text-align: center;
+}
+.section5 {
+  margin: 0 auto;
+  width: 50%;
+  background-color: lightgreen;
+  padding: 10px;
+  text-align: center;
+}
+.section6 {
+  margin: 0 auto;
+  width: 50%;
+  background-color: lightcoral;
+  padding: 10px;
+  text-align: center;
+}
+.container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+h1 {
+  font-family: 'strato-roman';
+  text-transform: uppercase;
+  font-size: 50px;
+  line-height: 1;
+  margin: 1;
+  text-align: center; /* 제목을 가운데 정렬 */
+  padding-top: 20px; /* 위에서 20px 여백 추가 */
+  color: #0d1238;
+  letter-spacing: 1rem;
+}
+
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+}
+
+form {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table td,
+table th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #b30000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  width: 500px;
+  background: white;
+  padding: 15px;
+  border: 3px solid #dddddd80;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+.content {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.content p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #333;
+}

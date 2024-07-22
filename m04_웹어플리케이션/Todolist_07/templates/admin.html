@@ -1,0 +1,9 @@
+{% extends "base.html" %} {% block title %}Admin Panel{% endblock %} {% block header %}Admin Panel{% endblock %}
+{% block content %}
+<h2>User Management</h2>
+<u1>
+    {% for user in users %}
+    <li>{{ user.username }} - {{ 'Admin' if user.is_admin else 'User' }}</li>
+    {% endfor %}
+</u1>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Task List{% endblock %}
+{% block header %}Task List{% endblock %}
+
+{% block content %}
+<form method="POST" action="/">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+      <p>
+        <label for="title">제목</label><br />
+        <input type="text" name="title" id="title" size="32" required />
+      </p>
+      <p>
+        <label for="contents">내용</label><br />
+        <textarea name="contents" id="contents" rows="4" required></textarea>
+      </p> 
+
+      <p>
+        <label for="due_date">마감일</label><br />
+        <input type="date" name="due_date" id="due_date" required />
+      </p>
+      <p><input type="submit" value="Add Task" />
+      </p>
+    </form>
+    <ul id="task-list">
+      <!-- Task items will be populated here by JavaScript -->
+    </ul>
+{% endblock %}
