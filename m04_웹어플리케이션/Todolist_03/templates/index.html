@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Task List</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4; 
+      }
+      h1 {
+        color: #333;
+      }
+      form {
+        margin-bottom: 20px;
+        background : #fff;
+        padding : 20px;
+        border-radius : 5px;
+        box-shadow : 0 0 10px rgba(0,0,0,0.1);
+      }
+      label {
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="date"],
+      textarea {
+        width: 1000px;
+        padding: 8px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      li {
+        background: #fff;
+        margin: 10px 0;
+        padding: 15px;
+        border-radius: 5px;
+        /* 수평 및 수직 이동없이 요소 주위에 부드럽고 퍼진 매우 옅은 검은색 그림자 효과 */
+        box-shadow: 0 0 10px rgba(0,0,0,0.1)
+      }
+      a {
+        margin-left: 10px;
+        color: #007bff;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("/tasks")
+          .then((response) => response.json())
+          .then((tasks) => {
+            const taskList = document.getElementById("task-list");
+            tasks.forEach((task) => {
+              const li = document.createElement("li");
+              li.innerHTML = `<strong>${task.title}</strong><br>
+                              ${task.contents}<br>
+                              등록일: ${task.input_date}<br>
+                              마감일: ${task.due_date}`;
+
+              const editLink = document.createElement("a");
+              editLink.href = `/edit/${task.id}`;
+              editLink.textContent = " Edit";
+              li.appendChild(editLink);
+
+              const deleteLink = document.createElement("a");
+              deleteLink.href = `/delete/${task.id}`;
+              deleteLink.textContent = " Delete";
+              li.appendChild(deleteLink);
+
+              taskList.appendChild(li);
+            });
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Task List</h1>
+    <form method="POST" action="/">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+      <p>
+        <label for="title">제목</label><br />
+        <input type="text" name="title" id="title" size="32" required />
+      </p>
+      <p>
+        <label for="contents">내용</label><br />
+        <textarea name="contents" id="contents" rows="4" required></textarea>
+      </p> 
+
+      <p>
+        <label for="due_date">마감일</label><br />
+        <input type="date" name="due_date" id="due_date" required />
+      </p>
+      <p><input type="submit" value="Add Task" />
+      </p>
+    </form>
+    <ul id="task-list">
+      <!-- Task items will be populated here by JavaScript -->
+    </ul>
+  </body>
+</html>

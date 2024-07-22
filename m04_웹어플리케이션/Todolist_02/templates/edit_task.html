@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <head> : 웹페이지의 <meta>문서인코딩,view_port 설정 / <style> 문서 스타일 설정 / <script>가 작성되는 곳 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit List</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("/tasks")
+            // fetch로 app.py 파일의 라우트 tasks에 요청보냄. 있으면 진행됨. (json 형식으로 서버랑 소통)
+                .then((response) => response.json())
+                .then((tasks) => {
+                    const taskList = document.getElementById("task-list");
+                    tasks.forEach((task) => {
+                        const li = document.createElement("li");
+                        li.textContent = task.title;
+
+                        const editLink = document.createElement("a");
+                        editLink.href = `/edit/${task.id}`;
+                        editLink.textContent = "Edit ";
+                        li.appendChild(editLink);
+
+                        const deleteLink = document.createElement("a");
+                        deleteLink.href = `/delete/${task.id}`;
+                        deleteLink.textContent = "Delete";
+                        li.appendChild(deleteLink);
+
+                        taskList.appendChild(li);
+                    });
+                });
+        });
+    </script>
+</head>
+<body>
+    <!-- 실제 웹페이지 화면에 나타나는 콘텐츠를 작성하는 곳 -->
+   <!-- <head> 페이지 상단부 : <nav> 내비게이션 메뉴, <ul>,<li>,<a> 순서없는 리스트, 항목/링크를 정의  -->
+    <h1>Edit List</h1>
+    <form method="POST" action="/edit/{{ task_id }}">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token }}" />
+        <p>
+            <label for="title">제목</label><br />
+            <input type="text" name="title" id="title" size="32" value="{{ task_title }}" required />
+        </p>
+        <p>
+            <label for="contents">내용</label><br />
+            <textarea name="contents" rows="4" required>{{ task_contents }}</textarea>
+        </p>
+        <p>
+            <label for="due_date">마감일</label><br />
+            <input type="date" name="due_date" id="due_date" value="{{ task_due_date }}" required />
+        </p>
+        <p><input type="submit" value="Edit Task" /></p>
+        <!-- submit 선택(입력)하여 web 어플리케이션 (Flask)에서 POST방식으로 Edit Task 요청함. 맞으면 밑에 프로세스부터 진행.
+             if request.method == "POST" and form.validate_on_submit() -->
+    </form>
+    <p>등록일: {{ task_input_date }}</p>
+    <a href="/">Back to Task List</a>
+</body>
+</html>

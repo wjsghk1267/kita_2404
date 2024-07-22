@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <!-- <head> : 웹페이지의 <meta>문서인코딩,view_port 설정 / <style> 문서 스타일 설정 / <script>가 작성되는 곳 -->
+    <title>Task List</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          fetch("/tasks")
+          // fetch로 app.py 파일의 라우트 tasks에 요청보냄. 있으면 진행됨. (json 형식으로 서버랑 소통)
+            .then((response) => response.json())
+            .then((tasks) => {
+              const taskList = document.getElementById("task-list");
+              tasks.forEach((task) => {
+                const li = document.createElement("li");
+                li.textContent = task.title; 
+               
+                const editLink = document.createElement("a");
+                editLink.href = `/edit/${task.id}`;
+                editLink.textContent = "Edit ";
+                li.appendChild(editLink);
+                
+                const deleteLink = document.createElement("a");
+                deleteLink.href = `/delete/${task.id}`;
+                deleteLink.textContent = "Delete";
+                li.appendChild(deleteLink);
+
+                taskList.appendChild(li);
+              });
+            });
+        });
+      </script>
+</head>
+<body>
+  <!-- 실제 웹페이지 화면에 나타나는 콘텐츠를 작성하는 곳 -->
+   <!-- <head> 페이지 상단부 : <nav> 내비게이션 메뉴, <ul>,<li>,<a> 순서없는 리스트, 항목/링크를 정의  -->
+    <h1>Task List</h1>
+    <form method="POST" action="/">
+        <input type="hidden" name="csrf_token" value="{{ form.csrf_token._value()}}"/>
+        <p>
+            <label for="title">Title:</label>            
+            <input type="text" name="title" id="title" size="32" required />
+        </p>
+        <p><input type="submit" value="Add Task"/></p>
+    </form>
+    <ul id="task-list">
+          
+    </ul>    
+</body>
+</html>
